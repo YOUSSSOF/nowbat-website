@@ -83,8 +83,7 @@ export default async function HomePage({ params }: Props) {
     },
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir",
     softwareVersion: "1.0.0",
-    releaseNotes:
-      "https://github.com/YOUSSSOF/nowbat/blob/master/docs/PROGRESS.md",
+    releaseNotes: "https://github.com/YOUSSSOF/nowbat/blob/master/docs/PROGRESS.md",
   };
 
   return (
@@ -159,12 +158,7 @@ export default async function HomePage({ params }: Props) {
           overline={tSms("overline")}
           title={tSms("title")}
           description={tSms("description")}
-          bullets={[
-            tSms("bullet_1"),
-            tSms("bullet_2"),
-            tSms("bullet_3"),
-            tSms("bullet_4"),
-          ]}
+          bullets={[tSms("bullet_1"), tSms("bullet_2"), tSms("bullet_3"), tSms("bullet_4")]}
           imageSrc="/images/screenshot-sms-notifications.svg"
           imageAlt={tSms("image_alt")}
           imageWidth={600}

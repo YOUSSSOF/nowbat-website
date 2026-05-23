@@ -1,69 +1,78 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
-  <rect width="600" height="400" rx="8" fill="#0D0D1A"/>
-  <!-- Background glow -->
-  <ellipse cx="300" cy="200" rx="250" ry="160" fill="rgba(55,138,221,0.04)"/>
-  <!-- Phone frame -->
-  <rect x="170" y="20" width="260" height="360" rx="24" fill="#131320" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-  <!-- Phone notch -->
-  <rect x="240" y="28" width="120" height="12" rx="6" fill="#0D0D1A"/>
-  <!-- Step 1: Service selection -->
-  <rect x="190" y="56" width="220" height="60" rx="8" fill="#0A0A17" stroke="rgba(55,138,221,0.3)" stroke-width="1.5"/>
-  <rect x="202" y="66" width="80" height="10" rx="2" fill="#378ADD" opacity="0.8"/>
-  <rect x="202" y="82" width="120" height="12" rx="3" fill="#F0F0F8" opacity="0.7"/>
-  <rect x="202" y="100" width="60" height="8" rx="2" fill="#8888AA" opacity="0.5"/>
-  <!-- Step 2: Staff card row -->
-  <rect x="190" y="126" width="100" height="70" rx="8" fill="#131320" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-  <circle cx="240" cy="148" r="14" fill="#378ADD" opacity="0.2"/>
-  <rect x="226" y="144" width="28" height="8" rx="2" fill="#378ADD" opacity="0.5"/>
-  <rect x="210" y="166" width="60" height="8" rx="2" fill="#F0F0F8" opacity="0.5"/>
-  <rect x="218" y="180" width="44" height="6" rx="2" fill="#8888AA" opacity="0.4"/>
-  <rect x="298" y="126" width="100" height="70" rx="8" fill="#0A0A17" stroke="rgba(55,138,221,0.3)" stroke-width="1.5"/>
-  <circle cx="348" cy="148" r="14" fill="#1D9E75" opacity="0.2"/>
-  <rect x="334" y="144" width="28" height="8" rx="2" fill="#1D9E75" opacity="0.5"/>
-  <rect x="318" y="166" width="60" height="8" rx="2" fill="#F0F0F8" opacity="0.7"/>
-  <rect x="326" y="180" width="44" height="6" rx="2" fill="#1D9E75" opacity="0.5"/>
-  <!-- Step 3: Jalali calendar -->
-  <rect x="190" y="206" width="220" height="90" rx="8" fill="#131320" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-  <rect x="202" y="216" width="196" height="12" rx="2" fill="#131320"/>
-  <rect x="202" y="216" width="50" height="12" rx="2" fill="#8888AA" opacity="0.4"/>
-  <rect x="358" y="216" width="40" height="12" rx="2" fill="#8888AA" opacity="0.4"/>
-  <!-- Calendar grid -->
-  <rect x="202" y="234" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="228" y="234" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="254" y="234" width="20" height="20" rx="3" fill="#378ADD" opacity="0.8"/>
-  <rect x="280" y="234" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="306" y="234" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="332" y="234" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="358" y="234" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="202" y="260" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="228" y="260" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="254" y="260" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="280" y="260" width="20" height="20" rx="3" fill="#1D9E75" opacity="0.6"/>
-  <rect x="306" y="260" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="332" y="260" width="20" height="20" rx="3" fill="#0A0A17"/>
-  <rect x="358" y="260" width="20" height="20" rx="3" fill="#E9A526" opacity="0.4"/>
-  <!-- Step 4: Confirm button -->
-  <rect x="190" y="308" width="220" height="44" rx="8" fill="#378ADD"/>
-  <rect x="260" y="322" width="80" height="16" rx="3" fill="white" opacity="0.9"/>
-  <!-- Progress dots -->
-  <circle cx="274" cy="368" r="5" fill="#378ADD"/>
-  <circle cx="290" cy="368" r="4" fill="rgba(255,255,255,0.2)"/>
-  <circle cx="306" cy="368" r="4" fill="rgba(255,255,255,0.2)"/>
-  <circle cx="322" cy="368" r="4" fill="rgba(255,255,255,0.2)"/>
-  <!-- Left side decorative cards -->
-  <rect x="20" y="80" width="130" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-  <rect x="32" y="92" width="60" height="8" rx="2" fill="#8888AA" opacity="0.4"/>
-  <rect x="32" y="106" width="80" height="12" rx="3" fill="#F0F0F8" opacity="0.5"/>
-  <rect x="32" y="124" width="40" height="8" rx="2" fill="#1D9E75" opacity="0.5"/>
-  <rect x="20" y="180" width="130" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-  <rect x="32" y="192" width="50" height="8" rx="2" fill="#8888AA" opacity="0.4"/>
-  <rect x="32" y="206" width="70" height="12" rx="3" fill="#F0F0F8" opacity="0.5"/>
-  <rect x="32" y="224" width="55" height="8" rx="2" fill="#E9A526" opacity="0.5"/>
-  <!-- Right side decorative -->
-  <rect x="450" y="80" width="130" height="50" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-  <rect x="462" y="92" width="70" height="8" rx="2" fill="#8888AA" opacity="0.4"/>
-  <rect x="462" y="106" width="50" height="10" rx="2" fill="#378ADD" opacity="0.5"/>
-  <rect x="450" y="150" width="130" height="50" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-  <rect x="462" y="162" width="60" height="8" rx="2" fill="#8888AA" opacity="0.4"/>
-  <rect x="462" y="176" width="45" height="10" rx="2" fill="#1D9E75" opacity="0.5"/>
+    <rect width="600" height="400" rx="8" fill="#0D0D1A" />
+    <!-- Background glow -->
+    <ellipse cx="300" cy="200" rx="250" ry="160" fill="rgba(55,138,221,0.04)" />
+    <!-- Phone frame -->
+    <rect x="170" y="20" width="260" height="360" rx="24" fill="#131320" stroke="rgba(255,255,255,0.1)"
+        stroke-width="1.5" />
+    <!-- Phone notch -->
+    <rect x="240" y="28" width="120" height="12" rx="6" fill="#0D0D1A" />
+    <!-- Step 1: Service selection -->
+    <rect x="190" y="56" width="220" height="60" rx="8" fill="#0A0A17" stroke="rgba(55,138,221,0.3)"
+        stroke-width="1.5" />
+    <rect x="202" y="66" width="80" height="10" rx="2" fill="#378ADD" opacity="0.8" />
+    <rect x="202" y="82" width="120" height="12" rx="3" fill="#F0F0F8" opacity="0.7" />
+    <rect x="202" y="100" width="60" height="8" rx="2" fill="#8888AA" opacity="0.5" />
+    <!-- Step 2: Staff card row -->
+    <rect x="190" y="126" width="100" height="70" rx="8" fill="#131320" stroke="rgba(255,255,255,0.07)"
+        stroke-width="1" />
+    <circle cx="240" cy="148" r="14" fill="#378ADD" opacity="0.2" />
+    <rect x="226" y="144" width="28" height="8" rx="2" fill="#378ADD" opacity="0.5" />
+    <rect x="210" y="166" width="60" height="8" rx="2" fill="#F0F0F8" opacity="0.5" />
+    <rect x="218" y="180" width="44" height="6" rx="2" fill="#8888AA" opacity="0.4" />
+    <rect x="298" y="126" width="100" height="70" rx="8" fill="#0A0A17" stroke="rgba(55,138,221,0.3)"
+        stroke-width="1.5" />
+    <circle cx="348" cy="148" r="14" fill="#1D9E75" opacity="0.2" />
+    <rect x="334" y="144" width="28" height="8" rx="2" fill="#1D9E75" opacity="0.5" />
+    <rect x="318" y="166" width="60" height="8" rx="2" fill="#F0F0F8" opacity="0.7" />
+    <rect x="326" y="180" width="44" height="6" rx="2" fill="#1D9E75" opacity="0.5" />
+    <!-- Step 3: Jalali calendar -->
+    <rect x="190" y="206" width="220" height="90" rx="8" fill="#131320" stroke="rgba(255,255,255,0.07)"
+        stroke-width="1" />
+    <rect x="202" y="216" width="196" height="12" rx="2" fill="#131320" />
+    <rect x="202" y="216" width="50" height="12" rx="2" fill="#8888AA" opacity="0.4" />
+    <rect x="358" y="216" width="40" height="12" rx="2" fill="#8888AA" opacity="0.4" />
+    <!-- Calendar grid -->
+    <rect x="202" y="234" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="228" y="234" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="254" y="234" width="20" height="20" rx="3" fill="#378ADD" opacity="0.8" />
+    <rect x="280" y="234" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="306" y="234" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="332" y="234" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="358" y="234" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="202" y="260" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="228" y="260" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="254" y="260" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="280" y="260" width="20" height="20" rx="3" fill="#1D9E75" opacity="0.6" />
+    <rect x="306" y="260" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="332" y="260" width="20" height="20" rx="3" fill="#0A0A17" />
+    <rect x="358" y="260" width="20" height="20" rx="3" fill="#E9A526" opacity="0.4" />
+    <!-- Step 4: Confirm button -->
+    <rect x="190" y="308" width="220" height="44" rx="8" fill="#378ADD" />
+    <rect x="260" y="322" width="80" height="16" rx="3" fill="white" opacity="0.9" />
+    <!-- Progress dots -->
+    <circle cx="274" cy="368" r="5" fill="#378ADD" />
+    <circle cx="290" cy="368" r="4" fill="rgba(255,255,255,0.2)" />
+    <circle cx="306" cy="368" r="4" fill="rgba(255,255,255,0.2)" />
+    <circle cx="322" cy="368" r="4" fill="rgba(255,255,255,0.2)" />
+    <!-- Left side decorative cards -->
+    <rect x="20" y="80" width="130" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)"
+        stroke-width="1" />
+    <rect x="32" y="92" width="60" height="8" rx="2" fill="#8888AA" opacity="0.4" />
+    <rect x="32" y="106" width="80" height="12" rx="3" fill="#F0F0F8" opacity="0.5" />
+    <rect x="32" y="124" width="40" height="8" rx="2" fill="#1D9E75" opacity="0.5" />
+    <rect x="20" y="180" width="130" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)"
+        stroke-width="1" />
+    <rect x="32" y="192" width="50" height="8" rx="2" fill="#8888AA" opacity="0.4" />
+    <rect x="32" y="206" width="70" height="12" rx="3" fill="#F0F0F8" opacity="0.5" />
+    <rect x="32" y="224" width="55" height="8" rx="2" fill="#E9A526" opacity="0.5" />
+    <!-- Right side decorative -->
+    <rect x="450" y="80" width="130" height="50" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)"
+        stroke-width="1" />
+    <rect x="462" y="92" width="70" height="8" rx="2" fill="#8888AA" opacity="0.4" />
+    <rect x="462" y="106" width="50" height="10" rx="2" fill="#378ADD" opacity="0.5" />
+    <rect x="450" y="150" width="130" height="50" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)"
+        stroke-width="1" />
+    <rect x="462" y="162" width="60" height="8" rx="2" fill="#8888AA" opacity="0.4" />
+    <rect x="462" y="176" width="45" height="10" rx="2" fill="#1D9E75" opacity="0.5" />
 </svg>
