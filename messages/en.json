@@ -1,8 +1,10 @@
 {
-  "Home": {
-    "title": "Nowbat",
-    "description": "Online Appointment Scheduling for Iranian Businesses",
-    "scaffold_note": "Phase 3 — Scaffold complete"
+  "Metadata": {
+    "title": "Nowbat — Persian-first WordPress Booking Plugin",
+    "description": "Online appointment scheduling with Jalali calendar, ZarinPal, Kavenegar, and a Persian admin panel. Free and open-source WordPress plugin for Iranian businesses.",
+    "keywords": "WordPress booking plugin, online appointment scheduling Iran, Jalali calendar WordPress, ZarinPal WordPress, Persian WordPress plugin",
+    "og_title": "Nowbat — Online Appointment Scheduling for Iranian Businesses",
+    "og_description": "Jalali calendar, Iranian payment gateways, Persian SMS, and a professional admin panel — all in one WordPress plugin."
   },
   "Navigation": {
     "features": "Features",
@@ -133,6 +135,56 @@
     "elementor_a": "Yes. An Elementor widget and a Gutenberg block are included with the plugin. You can also use the shortcode in any page builder.",
     "support_q": "Where can I get support?",
     "support_a": "Support is provided through the GitHub repository (Issues). Complete documentation and step-by-step guides are available on this site."
+  },
+  "LandingDashboard": {
+    "overline": "Admin Panel",
+    "title": "Everything at a Glance",
+    "description": "The Nowbat dashboard shows the daily state of your business on a single screen. From today's appointments to monthly revenue — no separate reports needed.",
+    "bullet_1": "Status cards for confirmed, pending, and cancelled appointments",
+    "bullet_2": "Revenue chart for 7, 30, and 90 days with automatic Jalali conversion",
+    "bullet_3": "Today's appointments table with quick status change",
+    "bullet_4": "Per-staff performance summary for the current day",
+    "image_alt": "Nowbat admin dashboard preview"
+  },
+  "LandingBookingWizard": {
+    "overline": "Booking Form",
+    "title": "Smooth Booking Experience for Customers",
+    "description": "The booking form is a multi-step wizard that guides the customer from selecting a service to payment — no registration required.",
+    "bullet_1": "Choose service, staff, and time in three simple steps",
+    "bullet_2": "Jalali calendar with real-time available slot display",
+    "bullet_3": "Inline payment with ZarinPal, IDPay, or NextPay",
+    "bullet_4": "Instant SMS confirmation after successful booking",
+    "image_alt": "Nowbat booking wizard preview"
+  },
+  "LandingPayments": {
+    "overline": "Payment Gateways",
+    "title": "Iranian Payment Gateways Ready to Use",
+    "description": "Nowbat integrates with three trusted Iranian payment gateways. Payment verification is server-to-server — no client-reported data is trusted.",
+    "bullet_1": "ZarinPal with Sandbox mode for cost-free testing",
+    "bullet_2": "IDPay with refund support from the admin panel",
+    "bullet_3": "NextPay for businesses that need more flexibility",
+    "bullet_4": "Full transaction log with reference numbers and status",
+    "image_alt": "Nowbat payment gateway settings preview"
+  },
+  "LandingSms": {
+    "overline": "SMS & Notifications",
+    "title": "Automatic Persian SMS Notifications",
+    "description": "Nowbat integrates with three Iranian SMS providers. Confirmations, reminders, and cancellation alerts are sent automatically with a full delivery log.",
+    "bullet_1": "Kavenegar, Melipayamak, and IPPanel — your choice",
+    "bullet_2": "Automatic 24-hour reminder to reduce no-shows",
+    "bullet_3": "Daily send cap respected and customer opt-out checked",
+    "bullet_4": "Full SMS log with delivery status for each message",
+    "image_alt": "Nowbat SMS notifications log preview"
+  },
+  "LandingReports": {
+    "overline": "Reports & Analytics",
+    "title": "Your Business Data in Persian",
+    "description": "Financial and operational reports in Jalali calendar with Persian digits and CSV export for accounting. Everything you need for informed decisions.",
+    "bullet_1": "Daily, weekly, and monthly revenue charts in Toman",
+    "bullet_2": "Per-staff performance: appointment count, revenue, cancellation rate",
+    "bullet_3": "Capacity forecasting based on historical trends",
+    "bullet_4": "Full CSV export of all data for external reporting",
+    "image_alt": "Nowbat analytics reports preview"
   },
   "StatStrip": {
     "ariaLabel": "Project statistics",

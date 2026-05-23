@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" rx="8" fill="#0D0D1A"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="600" height="48" rx="8" fill="#131320"/>
+  <rect x="0" y="40" width="600" height="8" fill="#131320"/>
+  <rect x="20" y="16" width="80" height="16" rx="4" fill="#F0F0F8" opacity="0.6"/>
+  <!-- Time filter bar -->
+  <rect x="20" y="62" width="560" height="36" rx="6" fill="#0A0A17"/>
+  <rect x="24" y="66" width="70" height="28" rx="5" fill="#378ADD" opacity="0.15" stroke="rgba(55,138,221,0.4)" stroke-width="1"/>
+  <rect x="32" y="74" width="54" height="12" rx="3" fill="#378ADD" opacity="0.8"/>
+  <rect x="102" y="74" width="50" height="12" rx="3" fill="#8888AA" opacity="0.4"/>
+  <rect x="160" y="74" width="50" height="12" rx="3" fill="#8888AA" opacity="0.4"/>
+  <rect x="436" y="70" width="140" height="24" rx="4" fill="#131320" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="448" y="76" width="80" height="12" rx="2" fill="#8888AA" opacity="0.4"/>
+  <!-- Revenue chart area -->
+  <rect x="20" y="110" width="360" height="180" rx="8" fill="#131320" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="32" y="122" width="100" height="12" rx="3" fill="#F0F0F8" opacity="0.7"/>
+  <rect x="32" y="140" width="60" height="8" rx="2" fill="#8888AA" opacity="0.5"/>
+  <!-- Chart axes -->
+  <line x1="50" y1="274" x2="368" y2="274" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <line x1="50" y1="214" x2="368" y2="214" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="50" y1="244" x2="368" y2="244" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="50" y1="184" x2="368" y2="184" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4 4"/>
+  <!-- Chart bars -->
+  <rect x="60" y="240" width="22" height="34" rx="3" fill="#378ADD" opacity="0.5"/>
+  <rect x="96" y="220" width="22" height="54" rx="3" fill="#378ADD" opacity="0.5"/>
+  <rect x="132" y="200" width="22" height="74" rx="3" fill="#378ADD" opacity="0.6"/>
+  <rect x="168" y="230" width="22" height="44" rx="3" fill="#378ADD" opacity="0.5"/>
+  <rect x="204" y="190" width="22" height="84" rx="3" fill="#378ADD" opacity="0.7"/>
+  <rect x="240" y="210" width="22" height="64" rx="3" fill="#378ADD" opacity="0.6"/>
+  <rect x="276" y="185" width="22" height="89" rx="3" fill="#378ADD" opacity="0.8"/>
+  <rect x="312" y="195" width="22" height="79" rx="3" fill="#378ADD" opacity="0.7"/>
+  <rect x="348" y="170" width="22" height="104" rx="3" fill="#378ADD"/>
+  <!-- Y axis labels -->
+  <rect x="32" y="270" width="12" height="6" rx="1" fill="#8888AA" opacity="0.3"/>
+  <rect x="32" y="240" width="12" height="6" rx="1" fill="#8888AA" opacity="0.3"/>
+  <rect x="32" y="210" width="12" height="6" rx="1" fill="#8888AA" opacity="0.3"/>
+  <rect x="32" y="180" width="12" height="6" rx="1" fill="#8888AA" opacity="0.3"/>
+  <!-- Stats sidebar -->
+  <rect x="400" y="110" width="180" height="180" rx="8" fill="#131320" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="412" y="122" width="100" height="12" rx="3" fill="#F0F0F8" opacity="0.7"/>
+  <rect x="400" y="142" width="180" height="1" fill="rgba(255,255,255,0.07)"/>
+  <!-- Stat items -->
+  <rect x="412" y="154" width="70" height="8" rx="2" fill="#8888AA" opacity="0.5"/>
+  <rect x="412" y="168" width="100" height="16" rx="3" fill="#F0F0F8" opacity="0.8"/>
+  <rect x="400" y="194" width="180" height="1" fill="rgba(255,255,255,0.05)"/>
+  <rect x="412" y="206" width="60" height="8" rx="2" fill="#8888AA" opacity="0.5"/>
+  <rect x="412" y="220" width="80" height="16" rx="3" fill="#1D9E75" opacity="0.8"/>
+  <rect x="400" y="246" width="180" height="1" fill="rgba(255,255,255,0.05)"/>
+  <rect x="412" y="258" width="75" height="8" rx="2" fill="#8888AA" opacity="0.5"/>
+  <rect x="412" y="272" width="50" height="16" rx="3" fill="#E9A526" opacity="0.8"/>
+  <!-- Bottom charts row -->
+  <rect x="20" y="304" width="172" height="76" rx="8" fill="#131320" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="32" y="316" width="90" height="10" rx="3" fill="#F0F0F8" opacity="0.6"/>
+  <rect x="32" y="332" width="50" height="8" rx="2" fill="#8888AA" opacity="0.4"/>
+  <rect x="32" y="348" width="60" height="20" rx="4" fill="#1D9E75" opacity="0.6"/>
+  <rect x="206" y="304" width="172" height="76" rx="8" fill="#131320" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="218" y="316" width="90" height="10" rx="3" fill="#F0F0F8" opacity="0.6"/>
+  <rect x="218" y="332" width="50" height="8" rx="2" fill="#8888AA" opacity="0.4"/>
+  <rect x="218" y="348" width="60" height="20" rx="4" fill="#E9A526" opacity="0.6"/>
+  <rect x="392" y="304" width="188" height="76" rx="8" fill="#131320" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="404" y="316" width="80" height="10" rx="3" fill="#F0F0F8" opacity="0.6"/>
+  <rect x="404" y="332" width="60" height="8" rx="2" fill="#8888AA" opacity="0.4"/>
+  <rect x="404" y="348" width="70" height="20" rx="4" fill="#E24B4A" opacity="0.5"/>
+</svg>
