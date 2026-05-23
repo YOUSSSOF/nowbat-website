@@ -1,0 +1,128 @@
+---
+title: "REST API"
+description: "مرجع کامل endpoint های عمومی و مدیریتی نوبت با نمونه درخواست و پاسخ."
+---
+
+# REST API
+
+پیشوند تمام endpoint ها: `/wp-json/nowbat/v1/`
+
+## احراز هویت
+
+- **مسیرهای عمومی:** بدون احراز هویت (با محدودیت نرخ)
+- **مسیرهای مدیریتی:** نیاز به هدر `X-WP-Nonce` دارند
+
+```
+X-WP-Nonce: {nonce از wp_create_nonce('wp_rest')}
+```
+
+## محدودیت نرخ
+
+مسیرهای عمومی از `RateLimiter` استفاده می‌کنند:
+
+| مسیر | محدودیت |
+|---|---|
+| `GET /slots` | ۱۰ درخواست/دقیقه/IP |
+| `POST /appointments` | ۳ درخواست/دقیقه/IP |
+
+## مسیرهای عمومی
+
+### دریافت بازه‌های زمانی خالی
+
+```
+GET /nowbat/v1/slots
+```
+
+**پارامترها:**
+
+| پارامتر | نوع | الزامی | توضیح |
+|---|---|---|---|
+| `service_id` | int | ✓ | شناسه سرویس |
+| `staff_id` | int | ✗ | فیلتر بر اساس کارمند |
+| `date` | string | ✓ | تاریخ میلادی `YYYY-MM-DD` |
+
+**پاسخ ۲۰۰:**
+
+```json
+{
+  "slots": [
+    { "start": "09:00", "end": "10:00", "available": true },
+    { "start": "10:00", "end": "11:00", "available": false }
+  ]
+}
+```
+
+### ثبت نوبت
+
+```
+POST /nowbat/v1/appointments
+```
+
+**بدنه درخواست:**
+
+```json
+{
+  "service_id": 1,
+  "staff_id": 2,
+  "date": "2024-07-15",
+  "time": "09:00",
+  "customer_name": "علی رضایی",
+  "customer_phone": "09121234567",
+  "customer_email": "ali@example.com",
+  "notes": "درخواست خاص"
+}
+```
+
+**پاسخ ۲۰۱:**
+
+```json
+{
+  "appointment_id": 42,
+  "status": "pending",
+  "payment_url": "https://..."
+}
+```
+
+## مسیرهای مدیریتی
+
+### دریافت لیست نوبت‌ها
+
+```
+GET /nowbat/v1/admin/appointments
+```
+
+**پارامترها:** `status`, `date_from`, `date_to`, `service_id`, `staff_id`, `page`, `per_page`
+
+**دسترسی مورد نیاز:** `nowbat_manage_appointments`
+
+### تغییر وضعیت نوبت
+
+```
+PATCH /nowbat/v1/admin/appointments/{id}/status
+```
+
+**بدنه:**
+
+```json
+{ "status": "confirmed" }
+```
+
+**وضعیت‌های مجاز:** `pending`, `confirmed`, `cancelled`, `completed`, `no_show`
+
+### درخواست استرداد وجه
+
+```
+POST /nowbat/v1/admin/appointments/{id}/refund
+```
+
+**دسترسی:** `nowbat_manage_settings`
+
+## کدهای خطا
+
+| کد | معنی |
+|---|---|
+| `rest_forbidden` | دسترسی رد شد |
+| `nowbat_slot_taken` | بازه زمانی رزرو شده |
+| `nowbat_rate_limited` | درخواست‌های بیش از حد |
+| `nowbat_payment_failed` | خطا در پرداخت |
+| `nowbat_invalid_phone` | فرمت شماره تلفن نادرست |

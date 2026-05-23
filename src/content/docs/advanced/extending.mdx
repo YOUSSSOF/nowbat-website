@@ -1,0 +1,116 @@
+---
+title: "توسعه و سفارشی‌سازی"
+description: "افزودن درگاه پرداخت سفارشی، گسترش AvailabilityCalculator، و الگوهای توسعه افزونه."
+---
+
+# توسعه و سفارشی‌سازی
+
+## افزودن درگاه پرداخت سفارشی
+
+### ۱. پیاده‌سازی `PaymentGatewayInterface`
+
+```php
+namespace MyPlugin\Gateways;
+
+use Nowbat\Gateways\PaymentGatewayInterface;
+use Nowbat\Gateways\PaymentRequestResult;
+use Nowbat\Gateways\PaymentVerifyResult;
+use Nowbat\Gateways\PaymentRefundResult;
+
+class MyGateway implements PaymentGatewayInterface {
+
+    private string $api_key;
+
+    public function __construct( array $settings ) {
+        $this->api_key = $settings['api_key'] ?? '';
+    }
+
+    public function request( int $amount, string $callback_url, array $meta = [] ): PaymentRequestResult {
+        // ارسال درخواست به API درگاه
+        $response = wp_remote_post( 'https://mygateway.com/api/payment', [
+            'body' => [
+                'api_key'      => $this->api_key,
+                'amount'       => $amount,
+                'callback_url' => $callback_url,
+            ],
+        ] );
+
+        $body = json_decode( wp_remote_retrieve_body( $response ), true );
+
+        return new PaymentRequestResult(
+            success:      ! is_wp_error( $response ) && $body['status'] === 'ok',
+            redirect_url: $body['payment_url'] ?? '',
+            authority:    $body['authority'] ?? '',
+            error:        $body['message'] ?? ''
+        );
+    }
+
+    public function verify( string $authority, int $amount ): PaymentVerifyResult {
+        $response = wp_remote_post( 'https://mygateway.com/api/verify', [
+            'body' => [
+                'api_key'   => $this->api_key,
+                'authority' => sanitize_text_field( $authority ),
+                'amount'    => $amount,
+            ],
+        ] );
+
+        $body = json_decode( wp_remote_retrieve_body( $response ), true );
+
+        return new PaymentVerifyResult(
+            success: ! is_wp_error( $response ) && $body['status'] === 'verified',
+            ref_id:  $body['ref_id'] ?? '',
+            error:   $body['message'] ?? ''
+        );
+    }
+
+    public function refund( string $ref_id, int $amount ): PaymentRefundResult {
+        return new PaymentRefundResult( success: false, error: 'manual_refund_required' );
+    }
+}
+```
+
+### ۲. ثبت درگاه با فیلتر
+
+```php
+add_filter( 'nowbat_payment_gateways', function( array $gateways ) {
+    $gateways['my_gateway'] = \MyPlugin\Gateways\MyGateway::class;
+    return $gateways;
+} );
+```
+
+### ۳. تنظیمات درگاه (اختیاری)
+
+```php
+add_action( 'nowbat_payment_settings_fields', function() {
+    ?>
+    <div data-gateway="my_gateway">
+        <label><?php esc_html_e( 'API Key', 'my-plugin' ); ?></label>
+        <input type="text" name="nowbat_settings[payments][my_gateway][api_key]" />
+    </div>
+    <?php
+} );
+```
+
+---
+
+## گسترش AvailabilityCalculator
+
+برای تغییر منطق بازه‌های خالی از فیلتر `nowbat_available_slots` استفاده کنید:
+
+```php
+add_filter( 'nowbat_available_slots', function( array $slots, int $staff_id, string $date, int $service_id ) {
+    // مثال: حذف بازه‌های بعد از ساعت ۱۷ برای سرویس شماره ۵
+    if ( $service_id === 5 ) {
+        $slots = array_filter( $slots, fn($s) => substr( $s['start'], 0, 2 ) < 17 );
+    }
+    return array_values( $slots );
+}, 10, 4 );
+```
+
+---
+
+## الگوهای امن
+
+- همیشه `$wpdb->prepare()` برای کوئری‌های پایگاه داده استفاده کنید
+- ورودی‌های کاربر را با `sanitize_text_field()`, `absint()`, `esc_url_raw()` پاک‌سازی کنید
+- هرگز مستقیم `$_POST` را نخوانید — از args مسیر REST با `sanitize_callback` استفاده کنید

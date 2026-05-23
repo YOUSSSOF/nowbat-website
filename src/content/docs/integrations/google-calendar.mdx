@@ -1,0 +1,62 @@
+---
+title: "گوگل تقویم"
+description: "یکپارچه‌سازی Google Calendar با OAuth2 — همگام‌سازی نوبت‌ها برای هر کارمند."
+---
+
+# یکپارچه‌سازی گوگل تقویم
+
+## پیش‌نیازها
+
+- حساب Google Cloud Console
+- دسترسی به Google Calendar API
+
+## ساخت پروژه در Google Cloud Console
+
+1. به [console.cloud.google.com](https://console.cloud.google.com) بروید
+2. پروژه جدیدی بسازید
+3. از منوی «APIs & Services» ← «Library» وارد شوید
+4. **Google Calendar API** را جستجو و فعال کنید
+
+## ساخت OAuth2 Credentials
+
+1. «APIs & Services» ← «Credentials» ← «Create Credentials» ← «OAuth Client ID»
+2. Application type: **Web application**
+3. نام دلخواه وارد کنید
+4. در «Authorized redirect URIs» این آدرس را اضافه کنید:
+   ```
+   https://example.com/wp-json/nowbat/v1/google-calendar/callback
+   ```
+5. Client ID و Client Secret را کپی کنید
+
+## پیکربندی در نوبت
+
+مسیر: **نوبت ← تنظیمات ← یکپارچه‌سازی ← گوگل تقویم**
+
+| فیلد | توضیح |
+|---|---|
+| Client ID | از Google Cloud Console |
+| Client Secret | از Google Cloud Console |
+| حالت | `freebusy` یا `full` |
+
+**حالت `freebusy`:** فقط بررسی می‌کند کارمند آن بازه مشغول است یا نه — اطلاعات رویداد خوانده نمی‌شود.
+
+**حالت `full`:** نوبت‌های جدید به‌عنوان رویداد در گوگل تقویم ثبت می‌شوند.
+
+## اتصال حساب گوگل هر کارمند
+
+1. به **نوبت ← کارمندان** بروید
+2. کارمند موردنظر را باز کنید
+3. در بخش «گوگل تقویم» روی **اتصال به گوگل** کلیک کنید
+4. مراحل OAuth2 را در پاپ‌آپ طی کنید
+
+هر کارمند می‌تواند تقویم جداگانه‌ای متصل کند.
+
+## نحوه همگام‌سازی
+
+- **نوبت جدید:** یک رویداد در تقویم گوگل کارمند ساخته می‌شود
+- **لغو نوبت:** رویداد از تقویم حذف می‌شود
+- **نوبت شخصی کارمند در گوگل:** آن بازه زمانی در نوبت به‌عنوان مشغول نشان داده می‌شود
+
+<Callout type="warning">
+همگام‌سازی تک‌طرفه است: نوبت‌های ایجاد‌شده مستقیم در گوگل تقویم به نوبت منتقل نمی‌شوند.
+</Callout>

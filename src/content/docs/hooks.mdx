@@ -1,0 +1,175 @@
+---
+title: "هوک‌ها (Actions & Filters)"
+description: "مرجع کامل action ها و filter های نوبت برای توسعه‌دهندگان."
+---
+
+# هوک‌ها (Actions & Filters)
+
+## Actions
+
+### `nowbat_appointment_created`
+
+هنگامی که یک نوبت جدید ثبت می‌شود فراخوانی می‌شود (قبل از تأیید نهایی).
+
+```php
+add_action( 'nowbat_appointment_created', function( int $id, array $appt ) {
+    // $id: شناسه نوبت
+    // $appt: آرایه کامل داده‌های نوبت
+    error_log( "نوبت جدید: #{$id}" );
+}, 10, 2 );
+```
+
+---
+
+### `nowbat_appointment_status_changed`
+
+هنگام تغییر وضعیت نوبت فراخوانی می‌شود.
+
+```php
+add_action( 'nowbat_appointment_status_changed', function(
+    int $id, string $new_status, string $old_status, array $appt
+) {
+    if ( $new_status === 'confirmed' && $old_status === 'pending' ) {
+        // اطلاع‌رسانی به کارمند
+    }
+}, 10, 4 );
+```
+
+---
+
+### `nowbat_appointment_cancelled`
+
+هنگام لغو نوبت — پس از به‌روزرسانی وضعیت در پایگاه داده.
+
+```php
+add_action( 'nowbat_appointment_cancelled', function( int $id, array $appt ) {
+    // ارسال نوتیفیکیشن داخلی
+}, 10, 2 );
+```
+
+---
+
+### `nowbat_appointment_rescheduled`
+
+هنگام تغییر زمان نوبت توسط مدیر.
+
+```php
+add_action( 'nowbat_appointment_rescheduled', function( int $id, array $appt ) {
+    // $appt['old_date'] و $appt['old_time'] در دسترس است
+}, 10, 2 );
+```
+
+---
+
+### `nowbat_payment_received`
+
+هنگامی که پرداخت موفق تأیید می‌شود.
+
+```php
+add_action( 'nowbat_payment_received', function( int $appt_id, array $payment ) {
+    // $payment['ref_id'], $payment['amount'], $payment['gateway']
+}, 10, 2 );
+```
+
+---
+
+### `nowbat_payment_refunded`
+
+هنگامی که استرداد وجه انجام می‌شود.
+
+```php
+add_action( 'nowbat_payment_refunded', function( int $appt_id, array $payment ) {
+    // ارسال ایمیل سفارشی
+}, 10, 2 );
+```
+
+---
+
+### `nowbat_settings_updated`
+
+هنگامی که تنظیمات ذخیره می‌شوند.
+
+```php
+add_action( 'nowbat_settings_updated', function(
+    string $section, array $old_settings, array $new_settings
+) {
+    if ( $section === 'payments' ) {
+        // پاک کردن کش پیکربندی درگاه
+    }
+}, 10, 3 );
+```
+
+---
+
+## Filters
+
+### `nowbat_available_slots`
+
+لیست بازه‌های خالی را پیش از ارسال به کلاینت فیلتر می‌کند.
+
+```php
+add_filter( 'nowbat_available_slots', function(
+    array $slots, int $staff_id, string $date, int $service_id
+) {
+    // حذف بازه ۱۲:۰۰ تا ۱۳:۰۰ برای همه روزها
+    return array_filter( $slots, fn($s) => $s['start'] !== '12:00' );
+}, 10, 4 );
+```
+
+---
+
+### `nowbat_payment_gateways`
+
+درگاه‌های پرداخت موجود را تغییر می‌دهد. برای افزودن درگاه سفارشی استفاده کنید.
+
+```php
+add_filter( 'nowbat_payment_gateways', function( array $gateways ) {
+    $gateways['my_gateway'] = MyCustomGateway::class;
+    return $gateways;
+} );
+```
+
+---
+
+### `nowbat_sms_message`
+
+متن پیامک را قبل از ارسال تغییر می‌دهد.
+
+```php
+add_filter( 'nowbat_sms_message', function( string $msg, string $event, array $ctx ) {
+    return $msg . "\n\nبا تشکر از اعتماد شما";
+}, 10, 3 );
+```
+
+---
+
+### `nowbat_sms_before_send`
+
+کنترل می‌کند آیا پیامک ارسال شود یا نه.
+
+```php
+add_filter( 'nowbat_sms_before_send', function(
+    bool $should_send, string $phone, string $message, array $ctx
+) {
+    // بلاک کردن ارسال در ساعت‌های شب
+    $hour = (int) current_time( 'H' );
+    if ( $hour >= 23 || $hour < 7 ) return false;
+    return $should_send;
+}, 10, 4 );
+```
+
+---
+
+### `nowbat_refund_manual`
+
+مشخص می‌کند آیا استرداد باید به‌صورت دستی انجام شود.
+
+```php
+add_filter( 'nowbat_refund_manual', function(
+    bool $is_manual, int $appt_id, array $payment
+) {
+    // اگر مبلغ بیشتر از ۵ میلیون تومان بود، استرداد را دستی کن
+    if ( $payment['amount'] > 50_000_000 ) return true;
+    return $is_manual;
+}, 10, 3 );
+```

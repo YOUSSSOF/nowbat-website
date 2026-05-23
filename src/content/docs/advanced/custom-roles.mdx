@@ -1,0 +1,72 @@
+---
+title: "نقش‌ها و دسترسی‌ها"
+description: "سیستم permission نوبت، ثابت‌های capability، و نحوه اعطای دسترسی به نقش‌های سفارشی."
+---
+
+# نقش‌ها و دسترسی‌ها
+
+## ثابت‌های Capability
+
+| Capability | توضیح |
+|---|---|
+| `nowbat_manage_appointments` | مشاهده، ویرایش، و تغییر وضعیت نوبت‌ها |
+| `nowbat_manage_settings` | ویرایش تنظیمات افزونه |
+| `nowbat_manage_staff` | افزودن و ویرایش کارمندان |
+| `nowbat_manage_services` | افزودن و ویرایش خدمات |
+| `nowbat_view_reports` | مشاهده گزارش‌ها و داشبورد |
+| `nowbat_process_refunds` | درخواست استرداد وجه |
+
+## نقش‌های پیش‌فرض
+
+| نقش وردپرس | Capability های نوبت |
+|---|---|
+| `administrator` | همه |
+| `nowbat_manager` | همه به جز تنظیمات سیستمی |
+| `nowbat_staff` | فقط نوبت‌های خود + `nowbat_manage_appointments` |
+
+## اعطای دسترسی به نقش سفارشی
+
+برای دادن دسترسی نوبت به نقش دلخواه خود:
+
+```php
+add_action( 'after_setup_theme', function() {
+    $role = get_role( 'editor' ); // نام نقش خود را اینجا وارد کنید
+    if ( ! $role ) return;
+
+    $role->add_cap( 'nowbat_manage_appointments' );
+    $role->add_cap( 'nowbat_view_reports' );
+} );
+```
+
+<Callout type="warning">
+این کد را فقط یک بار اجرا کنید (مثلاً در `functions.php` تم یا یک افزونه). به دلیل ذخیره‌شدن capability در پایگاه داده، هر بار اجرا بی‌اثر است اما نیاز به اجرای مجدد ندارد.
+</Callout>
+
+## سلب دسترسی
+
+```php
+$role = get_role( 'author' );
+if ( $role ) {
+    $role->remove_cap( 'nowbat_manage_appointments' );
+}
+```
+
+## بررسی دسترسی در کد سفارشی
+
+```php
+if ( current_user_can( 'nowbat_manage_appointments' ) ) {
+    // نمایش دکمه مدیریت
+}
+```
+
+## امنیت REST API
+
+هر route مدیریتی نوبت دارای `permission_callback` است:
+
+```php
+'permission_callback' => function() {
+    return current_user_can( 'nowbat_manage_appointments' );
+},
+```
+
+پنهان کردن دکمه‌ها در رابط کاربری **جایگزین** بررسی permission سرور‌سایدی نیست.

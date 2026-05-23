@@ -1,0 +1,75 @@
+---
+title: "درگاه پرداخت"
+description: "پیکربندی زرین‌پال، آیدی‌پی، و نکست‌پی با حالت Sandbox و استرداد وجه."
+---
+
+# درگاه پرداخت
+
+مسیر: **نوبت ← تنظیمات ← پرداخت**
+
+## درگاه پیش‌فرض
+
+فقط یک درگاه می‌تواند فعال باشد. برای آزمایش، **زرین‌پال در حالت Sandbox** پیشنهاد می‌شود.
+
+## زرین‌پال
+
+| فیلد | توضیح |
+|---|---|
+| merchant_id | شناسه ۳۶ کاراکتری از پنل زرین‌پال |
+| حالت | `sandbox` یا `production` |
+| آدرس بازگشت | پر می‌شود از `{siteurl}/wp-json/nowbat/v1/payments/verify` |
+
+در حالت Sandbox از `merchant_id = XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX` (مقدار نمونه در مستندات زرین‌پال) استفاده کنید.
+
+## آیدی‌پی
+
+| فیلد | توضیح |
+|---|---|
+| api_key | کلید API از پنل آیدی‌پی |
+| حالت | `sandbox` یا `production` |
+
+آیدی‌پی از استرداد وجه (refund) پشتیبانی می‌کند. درخواست استرداد از **نوبت ← نوبت‌ها ← جزئیات** ارسال می‌شود.
+
+## نکست‌پی
+
+| فیلد | توضیح |
+|---|---|
+| api_key | کلید API از پنل نکست‌پی |
+
+<Callout type="warning">
+نکست‌پی استرداد خودکار ندارد. هنگام درخواست استرداد، فیلتر `nowbat_refund_manual` فعال می‌شود و مدیر باید استرداد را از پنل نکست‌پی انجام دهد.
+</Callout>
+
+## امنیت پرداخت
+
+تمام تأییدیه‌ها **سرور به سرور** انجام می‌شوند:
+
+```php
+// src/Gateways/ZarinpalGateway.php
+public function verify( string $authority, int $amount ): PaymentVerifyResult {
+    $response = wp_remote_post( 'https://api.zarinpal.com/pg/v4/payment/verify.json', [
+        'body' => json_encode([
+            'merchant_id' => $this->merchant_id,
+            'authority'   => sanitize_text_field( $authority ),
+            'amount'      => $amount,
+        ]),
+    ] );
+    // ...
+}
+```
+
+هیچ‌گاه مقدار `amount` از سمت کلاینت پذیرفته نمی‌شود؛ مقدار واقعی از پایگاه داده خوانده می‌شود.
+
+## لاگ تراکنش‌ها
+
+همه تراکنش‌ها در جدول `wp_nowbat_payments` ذخیره می‌شوند:
+
+| ستون | نوع | توضیح |
+|---|---|---|
+| id | INT | شناسه یکتا |
+| appointment_id | INT | FK به جدول نوبت‌ها |
+| gateway | VARCHAR(30) | نام درگاه |
+| amount | INT | مبلغ به ریال |
+| status | ENUM | pending / paid / refunded / failed |
+| ref_id | VARCHAR(100) | شماره مرجع از درگاه |
+| created_at | DATETIME | زمان UTC |
