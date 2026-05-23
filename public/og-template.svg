@@ -1,0 +1,123 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img"
+    aria-label="Nowbat OG image template">
+    <title>نوبت — سیستم نوبت‌دهی آنلاین برای کسب‌وکارهای ایرانی</title>
+
+    <!-- Page background -->
+    <rect width="1200" height="630" fill="#07070E" />
+
+    <!-- Subtle brand-blue radial glow in bottom-right quadrant -->
+    <!-- This is a background effect on an image asset — not a CSS gradient on a surface -->
+    <radialGradient id="brand-glow" cx="85%" cy="80%" r="50%">
+        <stop offset="0%" stop-color="#378ADD" stop-opacity="0.12" />
+        <stop offset="100%" stop-color="#378ADD" stop-opacity="0" />
+    </radialGradient>
+    <rect width="1200" height="630" fill="url(#brand-glow)" />
+
+    <!-- Very subtle top-left secondary glow -->
+    <radialGradient id="brand-glow-2" cx="5%" cy="10%" r="35%">
+        <stop offset="0%" stop-color="#378ADD" stop-opacity="0.05" />
+        <stop offset="100%" stop-color="#378ADD" stop-opacity="0" />
+    </radialGradient>
+    <rect width="1200" height="630" fill="url(#brand-glow-2)" />
+
+    <!-- Bottom accent line -->
+    <rect x="0" y="626" width="1200" height="4" fill="#378ADD" />
+
+    <!-- ─── Logo mark (top-left) ─── -->
+    <g transform="translate(80, 56)">
+        <rect width="48" height="48" rx="11" fill="#378ADD" />
+        <circle cx="24" cy="25" r="12" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" />
+        <line x1="24" y1="25" x2="24" y2="15.5" stroke="white" stroke-width="2.2" stroke-linecap="round" />
+        <line x1="24" y1="25" x2="17.2" y2="20" stroke="white" stroke-width="2.2" stroke-linecap="round" />
+        <circle cx="24" cy="25" r="1.8" fill="white" />
+    </g>
+
+    <!-- Brand name "نوبت · Nowbat" next to icon -->
+    <text x="144" y="90" font-family="'Vazirmatn', 'Tahoma', Arial, sans-serif" font-size="26" font-weight="700"
+        fill="#378ADD" direction="rtl" dominant-baseline="middle">نوبت</text>
+    <text x="208" y="90" font-family="'Vazirmatn', 'Inter', Arial, sans-serif" font-size="20" font-weight="400"
+        fill="rgba(255,255,255,0.25)" dominant-baseline="middle">·</text>
+    <text x="224" y="90" font-family="'Vazirmatn', 'Inter', Arial, sans-serif" font-size="20" font-weight="400"
+        fill="rgba(255,255,255,0.4)" dominant-baseline="middle">Nowbat</text>
+
+    <!-- ─── Main title (dynamic — replace in @vercel/og) ─── -->
+    <!-- Line 1 of title -->
+    <text x="80" y="260" font-family="'Vazirmatn', 'Tahoma', Arial, sans-serif" font-size="56" font-weight="700"
+        fill="#F0F0F8" direction="rtl" text-anchor="start">سیستم نوبت‌دهی آنلاین</text>
+
+    <!-- Line 2 of title (accent word) -->
+    <text x="80" y="336" font-family="'Vazirmatn', 'Tahoma', Arial, sans-serif" font-size="56" font-weight="700"
+        fill="#378ADD" direction="rtl" text-anchor="start">برای کسب‌وکارهای ایرانی</text>
+
+    <!-- ─── Description subtitle ─── -->
+    <text x="80" y="410" font-family="'Vazirmatn', 'Tahoma', Arial, sans-serif" font-size="24" font-weight="400"
+        fill="#8888AA" direction="rtl" text-anchor="start">افزونه وردپرس · تقویم جلالی · زرین‌پال · کاوه‌نگار</text>
+
+    <!-- ─── Site URL (bottom-left) ─── -->
+    <text x="80" y="580" font-family="'Vazirmatn', 'Inter', Arial, sans-serif" font-size="18" font-weight="400"
+        fill="rgba(255,255,255,0.2)" dominant-baseline="middle">nowbat.ir</text>
+
+    <!-- ─── Decorative abstract grid dots (right side background texture) ─── -->
+    <!-- 6x8 grid of subtle dots suggesting a calendar/schedule -->
+    <g opacity="0.04">
+        <g transform="translate(800, 100)">
+            <!-- Row 1 -->
+            <circle cx="0" cy="0" r="3" fill="white" />
+            <circle cx="48" cy="0" r="3" fill="white" />
+            <circle cx="96" cy="0" r="3" fill="white" />
+            <circle cx="144" cy="0" r="3" fill="white" />
+            <circle cx="192" cy="0" r="3" fill="white" />
+            <circle cx="240" cy="0" r="3" fill="white" />
+            <!-- Row 2 -->
+            <circle cx="0" cy="48" r="3" fill="white" />
+            <circle cx="48" cy="48" r="3" fill="white" />
+            <circle cx="96" cy="48" r="3" fill="white" />
+            <circle cx="144" cy="48" r="3" fill="white" />
+            <circle cx="192" cy="48" r="3" fill="white" />
+            <circle cx="240" cy="48" r="3" fill="white" />
+            <!-- Row 3 -->
+            <circle cx="0" cy="96" r="3" fill="white" />
+            <circle cx="48" cy="96" r="3" fill="white" />
+            <circle cx="96" cy="96" r="3" fill="white" />
+            <circle cx="144" cy="96" r="3" fill="white" />
+            <circle cx="192" cy="96" r="3" fill="white" />
+            <circle cx="240" cy="96" r="3" fill="white" />
+            <!-- Row 4 -->
+            <circle cx="0" cy="144" r="3" fill="white" />
+            <circle cx="48" cy="144" r="3" fill="white" />
+            <circle cx="96" cy="144" r="3" fill="white" />
+            <circle cx="144" cy="144" r="3" fill="white" />
+            <circle cx="192" cy="144" r="3" fill="white" />
+            <circle cx="240" cy="144" r="3" fill="white" />
+            <!-- Row 5 — appointment dot highlighted in brand blue -->
+            <circle cx="0" cy="192" r="3" fill="white" />
+            <circle cx="48" cy="192" r="3" fill="white" />
+            <circle cx="96" cy="192" r="5" fill="#378ADD" opacity="0.8" />
+            <circle cx="144" cy="192" r="3" fill="white" />
+            <circle cx="192" cy="192" r="3" fill="white" />
+            <circle cx="240" cy="192" r="5" fill="#378ADD" opacity="0.8" />
+            <!-- Row 6 -->
+            <circle cx="0" cy="240" r="3" fill="white" />
+            <circle cx="48" cy="240" r="3" fill="white" />
+            <circle cx="96" cy="240" r="3" fill="white" />
+            <circle cx="144" cy="240" r="3" fill="white" />
+            <circle cx="192" cy="240" r="3" fill="white" />
+            <circle cx="240" cy="240" r="3" fill="white" />
+            <!-- Row 7 -->
+            <circle cx="0" cy="288" r="3" fill="white" />
+            <circle cx="48" cy="288" r="3" fill="white" />
+            <circle cx="96" cy="288" r="3" fill="white" />
+            <circle cx="144" cy="288" r="5" fill="#378ADD" opacity="0.8" />
+            <circle cx="192" cy="288" r="3" fill="white" />
+            <circle cx="240" cy="288" r="3" fill="white" />
+            <!-- Row 8 -->
+            <circle cx="0" cy="336" r="3" fill="white" />
+            <circle cx="48" cy="336" r="3" fill="white" />
+            <circle cx="96" cy="336" r="3" fill="white" />
+            <circle cx="144" cy="336" r="3" fill="white" />
+            <circle cx="192" cy="336" r="3" fill="white" />
+            <circle cx="240" cy="336" r="3" fill="white" />
+        </g>
+    </g>
+
+</svg>
