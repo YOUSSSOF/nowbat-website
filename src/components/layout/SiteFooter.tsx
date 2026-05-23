@@ -18,9 +18,7 @@ const FOOTER_LINKS = {
     { href: "/docs/rest-api", labelKey: "rest_api" },
     { href: "/docs/hooks", labelKey: "hooks" },
   ],
-  social: [
-    { href: "https://github.com/YOUSSSOF/nowbat-website", label: "GitHub", external: true },
-  ],
+  social: [{ href: "https://github.com/YOUSSSOF/nowbat-website", label: "GitHub", external: true }],
 };
 
 function SiteFooter() {
@@ -96,9 +94,7 @@ function SiteFooter() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-[var(--border)]">
-          <p className="text-caption text-[var(--text-secondary)]">
-            {t("copyright")}
-          </p>
+          <p className="text-caption text-[var(--text-secondary)]">{t("copyright")}</p>
           <div className="flex items-center gap-4">
             {FOOTER_LINKS.social.map((item) => (
               <a

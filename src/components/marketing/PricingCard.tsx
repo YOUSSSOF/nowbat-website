@@ -1,6 +1,5 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
 import { Link } from "@/lib/i18n";
 import { IconCheck } from "@tabler/icons-react";
 
@@ -107,14 +106,17 @@ function PricingCard({
       </ul>
 
       {/* CTA */}
-      <Button
-        as={Link}
+      <Link
         href={ctaHref}
-        variant={highlighted ? "primary" : "outline"}
-        className="w-full justify-center"
+        className={cn(
+          "w-full inline-flex items-center justify-center gap-2 px-4 py-2 text-body rounded font-medium transition-colors duration-150",
+          highlighted
+            ? "bg-brand text-white hover:bg-brand-dim border border-transparent"
+            : "text-brand border border-brand hover:bg-[var(--brand-glow)]"
+        )}
       >
         {ctaLabel}
-      </Button>
+      </Link>
     </div>
   );
 }

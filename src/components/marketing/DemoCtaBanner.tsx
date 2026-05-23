@@ -2,7 +2,6 @@ import * as React from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
 import { IconRocket } from "@tabler/icons-react";
 
 interface DemoCtaBannerProps {
@@ -57,17 +56,18 @@ function DemoCtaBanner({ className, title, ctaLabel }: DemoCtaBannerProps) {
             </p>
 
             <div className="flex flex-wrap justify-center gap-3">
-              <Button as={Link} href="/demo" size="lg">
+              <Link
+                href="/demo"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-body-lg rounded font-medium transition-colors duration-150 bg-brand text-white hover:bg-brand-dim border border-transparent"
+              >
                 {ctaLabel ?? t("cta_primary")}
-              </Button>
-              <Button
-                as={Link}
+              </Link>
+              <Link
                 href="/docs/getting-started/installation"
-                size="lg"
-                variant="outline"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-body-lg rounded font-medium transition-colors duration-150 text-brand border border-brand hover:bg-[var(--brand-glow)]"
               >
                 {t("cta_secondary")}
-              </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -4,7 +4,6 @@ import { getTranslations } from "next-intl/server";
 import { SiteHeader, SiteFooter } from "@/components/layout";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { DemoCtaBanner } from "@/components/marketing";
 import { Link } from "@/lib/i18n";
 import {
@@ -13,12 +12,7 @@ import {
   getGuideTitle,
   getGuideDescription,
 } from "@/lib/guides";
-import {
-  IconBook,
-  IconClock,
-  IconArrowLeft,
-  IconArrowRight,
-} from "@tabler/icons-react";
+import { IconBook, IconClock, IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -66,9 +60,7 @@ export default async function GuidesPage({ params }: Props) {
               }}
             >
               <IconBook size={14} className="text-brand" />
-              <span className="text-caption text-brand font-medium">
-                {t("badge")}
-              </span>
+              <span className="text-caption text-brand font-medium">{t("badge")}</span>
             </div>
 
             <h1 className="text-display-lg font-bold text-[var(--text-primary)] mb-4">
@@ -101,8 +93,7 @@ export default async function GuidesPage({ params }: Props) {
                       </Badge>
                       <span className="flex items-center gap-1 text-caption text-[var(--text-secondary)]">
                         <IconClock size={12} />
-                        {guide.readingTimeMin}{" "}
-                        {locale === "fa" ? "دقیقه" : "min"}
+                        {guide.readingTimeMin} {locale === "fa" ? "دقیقه" : "min"}
                       </span>
                     </div>
 
@@ -115,16 +106,13 @@ export default async function GuidesPage({ params }: Props) {
                       </p>
                     </div>
 
-                    <Button
-                      as={Link}
+                    <Link
                       href={`/guides/${guide.slug}`}
-                      variant="outline"
-                      size="sm"
-                      className="self-start flex items-center gap-2"
+                      className="self-start inline-flex items-center gap-2 px-3 py-1.5 text-body-sm rounded font-medium transition-colors duration-150 text-brand border border-brand hover:bg-[var(--brand-glow)]"
                     >
                       {locale === "fa" ? "مطالعه راهنما" : "Read Guide"}
                       <ArrowIcon size={14} />
-                    </Button>
+                    </Link>
                   </GlassCard>
                 );
               })}

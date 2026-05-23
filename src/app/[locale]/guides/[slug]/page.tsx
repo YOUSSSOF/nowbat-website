@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { SiteHeader, SiteFooter } from "@/components/layout";
 import { DemoCtaBanner } from "@/components/marketing";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { Link } from "@/lib/i18n";
 import {
   loadGuide,
@@ -13,12 +12,7 @@ import {
   getGuideTitle,
   GUIDE_CATEGORY_LABELS,
 } from "@/lib/guides";
-import {
-  IconArrowLeft,
-  IconArrowRight,
-  IconClock,
-  IconBook,
-} from "@tabler/icons-react";
+import { IconArrowLeft, IconArrowRight, IconClock, IconBook } from "@tabler/icons-react";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -37,10 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!guide || !guideMeta) return { title: "Not Found" };
 
-  const pageUrl =
-    locale === "fa"
-      ? `${siteUrl}/guides/${slug}`
-      : `${siteUrl}/en/guides/${slug}`;
+  const pageUrl = locale === "fa" ? `${siteUrl}/guides/${slug}` : `${siteUrl}/en/guides/${slug}`;
 
   return {
     title: `${guide.frontmatter.title} — راهنماهای نوبت`,
@@ -69,16 +60,13 @@ export default async function GuidePage({ params }: Props) {
       <main className="min-h-screen pt-24 pb-16">
         <div className="mx-auto max-w-3xl px-6">
           {/* Back link */}
-          <Button
-            as={Link}
+          <Link
             href="/guides"
-            variant="ghost"
-            size="sm"
-            className="mb-8 flex items-center gap-2 text-[var(--text-secondary)] hover:text-brand"
+            className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 text-body-sm rounded font-medium transition-colors duration-150 text-[var(--text-secondary)] hover:text-brand"
           >
             <BackArrow size={16} />
             {locale === "fa" ? "همه راهنماها" : "All Guides"}
-          </Button>
+          </Link>
 
           {/* Header */}
           <header className="mb-10">
@@ -88,8 +76,7 @@ export default async function GuidePage({ params }: Props) {
               </Badge>
               <span className="flex items-center gap-1.5 text-caption text-[var(--text-secondary)]">
                 <IconClock size={12} />
-                {guideMeta.readingTimeMin}{" "}
-                {locale === "fa" ? "دقیقه مطالعه" : "min read"}
+                {guideMeta.readingTimeMin} {locale === "fa" ? "دقیقه مطالعه" : "min read"}
               </span>
             </div>
 
@@ -111,27 +98,21 @@ export default async function GuidePage({ params }: Props) {
 
           {/* Footer nav */}
           <div className="mt-12 pt-8 border-t border-[var(--border)] flex items-center justify-between">
-            <Button
-              as={Link}
+            <Link
               href="/guides"
-              variant="outline"
-              size="sm"
-              className="flex items-center gap-2"
+              className="inline-flex items-center gap-2 px-3 py-1.5 text-body-sm rounded font-medium transition-colors duration-150 text-brand border border-brand hover:bg-[var(--brand-glow)]"
             >
               <BackArrow size={14} />
               {locale === "fa" ? "همه راهنماها" : "All Guides"}
-            </Button>
+            </Link>
 
-            <Button
-              as={Link}
+            <Link
               href="/docs"
-              variant="outline"
-              size="sm"
-              className="flex items-center gap-2"
+              className="inline-flex items-center gap-2 px-3 py-1.5 text-body-sm rounded font-medium transition-colors duration-150 text-brand border border-brand hover:bg-[var(--brand-glow)]"
             >
               <IconBook size={14} />
               {locale === "fa" ? "مستندات کامل" : "Full Documentation"}
-            </Button>
+            </Link>
           </div>
         </div>
 

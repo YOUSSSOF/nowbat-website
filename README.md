@@ -36,4 +36,3 @@ npm run lint
 ## License
 
 MIT
-

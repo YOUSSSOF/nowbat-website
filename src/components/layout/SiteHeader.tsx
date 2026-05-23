@@ -59,10 +59,7 @@ function SiteHeader() {
             href="/"
             className="flex items-center gap-2 shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded"
           >
-            <span
-              className="text-body font-bold text-brand"
-              aria-label="Nowbat"
-            >
+            <span className="text-body font-bold text-brand" aria-label="Nowbat">
               نوبت
             </span>
             <span className="text-body-sm text-[var(--text-secondary)] hidden sm:inline">
@@ -121,12 +118,7 @@ function SiteHeader() {
 
       {/* Mobile full-screen nav overlay */}
       {mobileOpen && (
-        <div
-          className={cn(
-            "fixed inset-0 z-[199] lg:hidden",
-            "bg-[var(--bg-page)] flex flex-col",
-          )}
-        >
+        <div className={cn("fixed inset-0 z-[199] lg:hidden", "bg-[var(--bg-page)] flex flex-col")}>
           {/* Header row */}
           <div className="h-16 flex items-center justify-between px-6 border-b border-[var(--border)]">
             <Link
