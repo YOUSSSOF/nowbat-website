@@ -1,0 +1,127 @@
+---
+title: "اتصال Google Calendar به نوبت"
+description: "ساخت OAuth2 App در Google Cloud Console، تنظیم Redirect URI، اتصال تقویم هر کارمند، و تأیید همگام‌سازی."
+---
+
+# اتصال Google Calendar به نوبت
+
+با این یکپارچه‌سازی، نوبت‌های جدید به تقویم گوگل هر کارمند اضافه می‌شوند و رویدادهای شخصی کارمند به عنوان «مشغول» در نوبت نشان داده می‌شوند.
+
+## پیش‌نیازها
+
+- دسترسی به [Google Cloud Console](https://console.cloud.google.com)
+- یک حساب Google برای هر کارمند که می‌خواهید تقویم‌شان وصل شود
+
+---
+
+## مرحله ۱: ساخت پروژه در Google Cloud Console
+
+<Steps>
+
+### ورود به Console
+
+به [console.cloud.google.com](https://console.cloud.google.com) بروید و وارد حساب Google خود شوید.
+
+### ساخت پروژه جدید
+
+از بالای صفحه روی **انتخاب پروژه** کلیک کنید، سپس **پروژه جدید**. نامی مثل «Nowbat Integration» وارد کنید.
+
+### فعال کردن Google Calendar API
+
+از منوی سمت چپ به **APIs & Services ← Library** بروید. «Google Calendar API» را جستجو کنید و **Enable** را بزنید.
+
+</Steps>
+
+---
+
+## مرحله ۲: ساخت OAuth2 Credentials
+
+<Steps>
+
+### رفتن به صفحه Credentials
+
+از منو به **APIs & Services ← Credentials** بروید. روی **+ Create Credentials** کلیک کنید و **OAuth Client ID** را انتخاب کنید.
+
+### پیکربندی OAuth Consent Screen (اگر اولین بار است)
+
+اگر صفحه Consent Screen نشان داده شد:
+- User Type: **External**
+- App name: «Nowbat»
+- User support email: ایمیل خودتان
+- Authorized domains: دامنه سایت وردپرس‌تان
+
+### ساخت Client ID
+
+- Application type: **Web application**
+- نام: «Nowbat WordPress»
+- Authorized redirect URIs: آدرس زیر را اضافه کنید:
+  ```
+  https://example.com/wp-json/nowbat/v1/google-calendar/callback
+  ```
+  (به جای `example.com` آدرس دامنه سایت خود را بگذارید)
+
+### کپی Client ID و Client Secret
+
+روی **Create** کلیک کنید. Client ID و Client Secret نمایش داده می‌شوند. هر دو را کپی کنید.
+
+</Steps>
+
+---
+
+## مرحله ۳: پیکربندی در نوبت
+
+<Steps>
+
+### رفتن به تنظیمات
+
+در وردپرس، به **نوبت ← تنظیمات ← یکپارچه‌سازی ← Google Calendar** بروید.
+
+### وارد کردن Credentials
+
+- فیلد **Client ID**: مقدار کپی‌شده را وارد کنید
+- فیلد **Client Secret**: مقدار کپی‌شده را وارد کنید
+- حالت: **freebusy** برای شروع (فقط مشغولیت سنجیده می‌شود)
+
+### ذخیره
+
+**ذخیره تنظیمات** را بزنید.
+
+</Steps>
+
+---
+
+## مرحله ۴: اتصال تقویم هر کارمند
+
+<Steps>
+
+### باز کردن پروفایل کارمند
+
+در وردپرس، به **نوبت ← کارمندان** بروید و کارمند موردنظر را ویرایش کنید.
+
+### اتصال به گوگل
+
+در بخش «Google Calendar» دکمه **اتصال به Google** را بزنید. یک پاپ‌آپ باز می‌شود.
+
+### اعطای دسترسی
+
+با حساب Google کارمند وارد شوید و دسترسی به تقویم را اعطا کنید.
+
+### تأیید اتصال
+
+پس از بازگشت به پنل، وضعیت باید «متصل» نمایش داده شود.
+
+</Steps>
+
+---
+
+## تأیید همگام‌سازی
+
+یک نوبت آزمایشی ثبت کنید. بعد از ثبت:
+
+1. به [calendar.google.com](https://calendar.google.com) با حساب کارمند بروید
+2. رویداد جدیدی با عنوان «[نام سرویس] - [نام مشتری]» باید ساخته شده باشد
+3. اگر کارمند یک رویداد شخصی در همان زمان داشته باشد، آن slot در فرم رزرو «مشغول» نمایش داده می‌شود
+
+<Callout type="warning">
+همگام‌سازی تک‌طرفه است: رویدادهای ساخته‌شده مستقیم در گوگل تقویم به پایگاه داده نوبت وارد نمی‌شوند.
+</Callout>

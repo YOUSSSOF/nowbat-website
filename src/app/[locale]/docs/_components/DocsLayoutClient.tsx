@@ -42,11 +42,7 @@ export function DocsLayoutClient({
       <main className="flex-1 min-w-0 py-8">{children}</main>
 
       {/* Search modal */}
-      <SearchModal
-        documents={searchDocuments}
-        isOpen={isOpen}
-        onClose={close}
-      />
+      <SearchModal documents={searchDocuments} isOpen={isOpen} onClose={close} />
     </>
   );
 }

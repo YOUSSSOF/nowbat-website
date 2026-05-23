@@ -12,8 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "FeaturesPage" });
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir";
-  const pageUrl =
-    locale === "fa" ? `${siteUrl}/features` : `${siteUrl}/en/features`;
+  const pageUrl = locale === "fa" ? `${siteUrl}/features` : `${siteUrl}/en/features`;
 
   return {
     title: t("meta_title"),
@@ -99,10 +98,7 @@ export default async function FeaturesPage({ params }: Props) {
         {/* ── Filter + Feature list ────────────────────────────────────── */}
         <section className="pb-20 px-6">
           <div className="mx-auto max-w-container-xl">
-            <FeatureFilterClient
-              features={featuresWithText}
-              labels={categoryLabels}
-            />
+            <FeatureFilterClient features={featuresWithText} labels={categoryLabels} />
           </div>
         </section>
 
@@ -121,13 +117,9 @@ export default async function FeaturesPage({ params }: Props) {
               {Object.entries(featuresByCategory).map(([cat, features]) =>
                 features.map((f) => (
                   <tr key={f.id}>
-                    <td>
-                      {t(`${f.id}_title` as Parameters<typeof t>[0])}
-                    </td>
+                    <td>{t(`${f.id}_title` as Parameters<typeof t>[0])}</td>
                     <td>{t(`cat_${cat}` as Parameters<typeof t>[0])}</td>
-                    <td>
-                      {t(`${f.id}_desc` as Parameters<typeof t>[0])}
-                    </td>
+                    <td>{t(`${f.id}_desc` as Parameters<typeof t>[0])}</td>
                   </tr>
                 )),
               )}

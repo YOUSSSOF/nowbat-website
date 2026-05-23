@@ -108,14 +108,10 @@ interface FeatureFilterClientProps {
   };
 }
 
-export function FeatureFilterClient({
-  features,
-  labels,
-}: FeatureFilterClientProps) {
+export function FeatureFilterClient({ features, labels }: FeatureFilterClientProps) {
   const [active, setActive] = React.useState<FeatureCategory | "all">("all");
 
-  const filtered =
-    active === "all" ? features : features.filter((f) => f.category === active);
+  const filtered = active === "all" ? features : features.filter((f) => f.category === active);
 
   const chips: Array<{ key: FeatureCategory | "all"; label: string }> = [
     { key: "all", label: labels.all },
@@ -128,11 +124,7 @@ export function FeatureFilterClient({
   return (
     <div>
       {/* Filter chips */}
-      <div
-        className="flex flex-wrap gap-2 mb-10"
-        role="group"
-        aria-label={labels.filterLabel}
-      >
+      <div className="flex flex-wrap gap-2 mb-10" role="group" aria-label={labels.filterLabel}>
         {chips.map((chip) => (
           <button
             key={chip.key}
@@ -167,11 +159,7 @@ export function FeatureFilterClient({
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               >
-                <GlassCard
-                  hover
-                  padding="sm"
-                  className="flex items-start gap-4"
-                >
+                <GlassCard hover padding="sm" className="flex items-start gap-4">
                   {/* Icon */}
                   <div
                     className={cn(

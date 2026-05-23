@@ -13,6 +13,7 @@ const FOOTER_LINKS = {
   docs: [
     { href: "/docs/getting-started/installation", labelKey: "installation" },
     { href: "/docs/configuration/general", labelKey: "configuration" },
+    { href: "/guides", labelKey: "guides" },
     { href: "/docs/shortcodes", labelKey: "shortcodes" },
     { href: "/docs/rest-api", labelKey: "rest_api" },
     { href: "/docs/hooks", labelKey: "hooks" },

@@ -20,10 +20,7 @@ export default async function DocsLayout({ children, params }: Props) {
       <div className="min-h-screen pt-16">
         <div className="mx-auto max-w-[1400px] px-6 flex gap-8">
           {/* Sidebar */}
-          <DocsLayoutClient
-            sidebarGroups={sidebarGroups}
-            searchDocuments={searchDocuments}
-          >
+          <DocsLayoutClient sidebarGroups={sidebarGroups} searchDocuments={searchDocuments}>
             {children}
           </DocsLayoutClient>
         </div>

@@ -12,10 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "HowItWorksPage" });
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir";
-  const pageUrl =
-    locale === "fa"
-      ? `${siteUrl}/how-it-works`
-      : `${siteUrl}/en/how-it-works`;
+  const pageUrl = locale === "fa" ? `${siteUrl}/how-it-works` : `${siteUrl}/en/how-it-works`;
 
   return {
     title: t("meta_title"),
@@ -81,24 +78,14 @@ export default async function HowItWorksPage({ params }: Props) {
       titleKey: "step2_title" as const,
       descKey: "step2_desc" as const,
       codeKey: null,
-      detailKeys: [
-        "step2_detail1",
-        "step2_detail2",
-        "step2_detail3",
-        "step2_detail4",
-      ] as const,
+      detailKeys: ["step2_detail1", "step2_detail2", "step2_detail3", "step2_detail4"] as const,
     },
     {
       number: 3,
       titleKey: "step3_title" as const,
       descKey: "step3_desc" as const,
       codeKey: null,
-      detailKeys: [
-        "step3_detail1",
-        "step3_detail2",
-        "step3_detail3",
-        "step3_detail4",
-      ] as const,
+      detailKeys: ["step3_detail1", "step3_detail2", "step3_detail3", "step3_detail4"] as const,
     },
     {
       number: 4,
@@ -168,12 +155,7 @@ export default async function HowItWorksPage({ params }: Props) {
                 </div>
 
                 {/* Content */}
-                <div
-                  className={cn(
-                    "flex-1 pb-14 min-w-0",
-                    index === steps.length - 1 && "pb-0",
-                  )}
-                >
+                <div className={cn("flex-1 pb-14 min-w-0", index === steps.length - 1 && "pb-0")}>
                   <h2 className="text-heading-xl font-bold text-[var(--text-primary)] mb-3 leading-10">
                     {t(step.titleKey)}
                   </h2>
@@ -186,10 +168,7 @@ export default async function HowItWorksPage({ params }: Props) {
                     <GlassCard padding="md" className="mb-5">
                       <ul className="space-y-3">
                         {step.detailKeys.map((key) => (
-                          <li
-                            key={key}
-                            className="flex items-start gap-3"
-                          >
+                          <li key={key} className="flex items-start gap-3">
                             <span
                               className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand shrink-0"
                               aria-hidden="true"

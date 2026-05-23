@@ -11,6 +11,7 @@
     "how_it_works": "چطور کار می‌کند",
     "demo": "دمو",
     "docs": "مستندات",
+    "guides": "راهنماها",
     "blog": "وبلاگ",
     "pricing": "قیمت‌گذاری",
     "cta": "مشاهده دمو"
@@ -22,6 +23,7 @@
   "FooterLinks": {
     "product": "محصول",
     "documentation": "مستندات",
+    "guides": "راهنماها",
     "installation": "نصب و راه‌اندازی",
     "configuration": "تنظیمات",
     "shortcodes": "شورت‌کدها",
@@ -187,9 +189,9 @@
     "image_alt": "پیش‌نمایش گزارش‌های تحلیلی نوبت"
   },
   "StatStrip": {
-    "ariaLabel": "آمار پروژه",
-    "phases_value": "۱۸",
-    "phases_label": "مرحله توسعه",
+    "ariaLabel": "آمار افزونه",
+    "phases_value": "۴۱",
+    "phases_label": "قابلیت",
     "tables_value": "۹",
     "tables_label": "جدول پایگاه داده",
     "gateways_value": "۳",
@@ -342,5 +344,12 @@
   "Docs": {
     "search_label": "جستجو در مستندات",
     "on_this_page": "در این صفحه"
+  },
+  "GuidesPage": {
+    "meta_title": "راهنماها — نوبت",
+    "meta_description": "راهنماهای گام به گام برای پیکربندی افزونه نوبت: پرداخت، پیامک، تقویم گوگل، و بیشتر.",
+    "badge": "راهنماهای کاربردی",
+    "title": "راهنماهای نوبت",
+    "subtitle": "آموزش‌های عملی مرحله به مرحله برای سناریوهای واقعی — از راه‌اندازی پرداخت تا اتصال تقویم گوگل."
   }
 }

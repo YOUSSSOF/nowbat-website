@@ -11,6 +11,7 @@
     "how_it_works": "How It Works",
     "demo": "Demo",
     "docs": "Documentation",
+    "guides": "Guides",
     "blog": "Blog",
     "pricing": "Pricing",
     "cta": "View Demo"
@@ -22,6 +23,7 @@
   "FooterLinks": {
     "product": "Product",
     "documentation": "Documentation",
+    "guides": "Guides",
     "installation": "Installation",
     "configuration": "Configuration",
     "shortcodes": "Shortcodes",
@@ -187,9 +189,9 @@
     "image_alt": "Nowbat analytics reports preview"
   },
   "StatStrip": {
-    "ariaLabel": "Project statistics",
-    "phases_value": "18",
-    "phases_label": "Development phases",
+    "ariaLabel": "Plugin statistics",
+    "phases_value": "41",
+    "phases_label": "Features",
     "tables_value": "9",
     "tables_label": "Database tables",
     "gateways_value": "3",
@@ -342,5 +344,12 @@
   "Docs": {
     "search_label": "Search documentation",
     "on_this_page": "On This Page"
+  },
+  "GuidesPage": {
+    "meta_title": "Guides — Nowbat",
+    "meta_description": "Step-by-step guides for setting up Nowbat: payments, SMS notifications, Google Calendar, and more.",
+    "badge": "How-To Guides",
+    "title": "Nowbat Guides",
+    "subtitle": "Practical, step-by-step tutorials for real-world scenarios — from payment setup to Google Calendar sync."
   }
 }

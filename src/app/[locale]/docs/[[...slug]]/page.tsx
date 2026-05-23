@@ -3,12 +3,7 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { DocsHeader, OnThisPage, DocsPager } from "@/components/docs";
 import { DemoCtaBanner } from "@/components/marketing";
-import {
-  loadDocPage,
-  getAllDocSlugs,
-  getPagerLinks,
-  buildSidebarGroups,
-} from "@/lib/docs";
+import { loadDocPage, getAllDocSlugs, getPagerLinks, buildSidebarGroups } from "@/lib/docs";
 
 type Props = {
   params: Promise<{ locale: string; slug?: string[] }>;
@@ -18,9 +13,7 @@ export async function generateStaticParams() {
   const slugs = getAllDocSlugs();
   const locales = ["fa", "en"];
 
-  return locales.flatMap((locale) =>
-    slugs.map((slug) => ({ locale, slug })),
-  );
+  return locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -31,10 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!doc) return { title: "Not Found" };
 
   const slugStr = slug.join("/");
-  const pageUrl =
-    locale === "fa"
-      ? `${siteUrl}/docs/${slugStr}`
-      : `${siteUrl}/en/docs/${slugStr}`;
+  const pageUrl = locale === "fa" ? `${siteUrl}/docs/${slugStr}` : `${siteUrl}/en/docs/${slugStr}`;
 
   return {
     title: `${doc.frontmatter.title} — مستندات نوبت`,
@@ -63,21 +53,14 @@ export default async function DocsPage({ params }: Props) {
     <div className="flex gap-8">
       {/* Content */}
       <article className="flex-1 min-w-0 max-w-3xl">
-        <DocsHeader
-          title={doc.frontmatter.title}
-          breadcrumbs={breadcrumbs}
-          toc={doc.toc}
-        />
+        <DocsHeader title={doc.frontmatter.title} breadcrumbs={breadcrumbs} toc={doc.toc} />
 
         {/* MDX Content */}
         <div className="docs-content">{doc.content}</div>
 
         {/* Pager */}
         <div className="mt-12 pt-8 border-t border-[var(--border)]">
-          <DocsPager
-            prev={prev ?? undefined}
-            next={next ?? undefined}
-          />
+          <DocsPager prev={prev ?? undefined} next={next ?? undefined} />
         </div>
 
         {/* CTA */}
