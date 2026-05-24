@@ -1,6 +1,6 @@
-# نوبت · pronobat-website
+# ProNobat · pronobat-website
 
-> وب‌سایت رسمی افزونه نوبت‌دهی آنلاین **نوبت** — مارکتینگ، مستندات، و راهنماها.
+> وب‌سایت رسمی افزونه نوبت‌دهی آنلاین **ProNobat** — مارکتینگ، مستندات، و راهنماها.
 
 **Live →** [pronobat.ir](https://pronobat.ir) &nbsp;·&nbsp; **Plugin →** [rtl-theme.com/product/pronobat](https://www.rtl-theme.com/product/pronobat/)
 
