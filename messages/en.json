@@ -1,9 +1,9 @@
 {
   "Metadata": {
-    "title": "Nowbat — Persian-first WordPress Booking Plugin",
+    "title": "ProNobat — Persian-first WordPress Booking Plugin",
     "description": "Online appointment scheduling with Jalali calendar, ZarinPal, Kavenegar, and a Persian admin panel. Free and open-source WordPress plugin for Iranian businesses.",
     "keywords": "WordPress booking plugin, online appointment scheduling Iran, Jalali calendar WordPress, ZarinPal WordPress, Persian WordPress plugin",
-    "og_title": "Nowbat — Online Appointment Scheduling for Iranian Businesses",
+    "og_title": "ProNobat — Online Appointment Scheduling for Iranian Businesses",
     "og_description": "Jalali calendar, Iranian payment gateways, Persian SMS, and a professional admin panel — all in one WordPress plugin."
   },
   "Navigation": {
@@ -18,7 +18,7 @@
   },
   "Footer": {
     "tagline": "Online Appointment Scheduling for Iranian Businesses",
-    "copyright": "© 2026 Nowbat. All rights reserved."
+    "copyright": "© 2026 ProNobat. All rights reserved."
   },
   "FooterLinks": {
     "product": "Product",
@@ -42,7 +42,7 @@
     "cta_primary": "View Demo",
     "cta_secondary": "Get Started",
     "social_proof": "Installed on 100+ websites",
-    "mockup_aria": "Nowbat admin panel preview",
+    "mockup_aria": "ProNobat admin panel preview",
     "stat_appointments": "Today's Appointments",
     "stat_pending": "Pending Confirmation",
     "stat_revenue": "Revenue (IRR)",
@@ -57,7 +57,7 @@
     "status_completed": "Completed"
   },
   "FeatureStrip": {
-    "ariaLabel": "Nowbat key features",
+    "ariaLabel": "ProNobat key features",
     "jalali_calendar": "Jalali Calendar",
     "payment_gateways": "Payment Gateways",
     "sms_notifications": "Persian SMS",
@@ -66,7 +66,7 @@
     "recurring_appointments": "Recurring Appointments"
   },
   "FeatureGrid": {
-    "ariaLabel": "Nowbat features",
+    "ariaLabel": "ProNobat features",
     "overline": "Features",
     "title": "Everything You Need for Appointments",
     "subtitle": "From Jalali calendar to payment gateways — built for Iranian businesses.",
@@ -95,7 +95,7 @@
   },
   "DemoCtaBanner": {
     "ariaLabel": "Demo invitation",
-    "title": "Try Nowbat Right Now",
+    "title": "Try ProNobat Right Now",
     "description": "A fully functional live demo with real data — no installation required.",
     "cta_primary": "View Demo",
     "cta_secondary": "Documentation"
@@ -103,13 +103,13 @@
   "Testimonials": {
     "ariaLabel": "User testimonials",
     "overline": "Testimonials",
-    "title": "Iranian Businesses Trust Nowbat",
+    "title": "Iranian Businesses Trust ProNobat",
     "prev": "Previous",
     "next": "Next",
     "goToSlide": "Go to slide {n}",
     "t1_name": "Alireza Mohammadi",
     "t1_business": "Men's Barber Shop",
-    "t1_quote": "Since installing Nowbat, the phone no longer rings for reservations. Customers book online themselves and receive a confirmation SMS.",
+    "t1_quote": "Since installing ProNobat, the phone no longer rings for reservations. Customers book online themselves and receive a confirmation SMS.",
     "t2_name": "Maryam Karimi",
     "t2_business": "Psychology Clinic",
     "t2_quote": "The ZarinPal integration works great. My sessions are paid before the appointment and late cancellations have dropped significantly.",
@@ -121,10 +121,10 @@
     "ariaLabel": "Frequently asked questions",
     "overline": "FAQ",
     "title": "Answers to Your Questions",
-    "free_q": "Is Nowbat free?",
-    "free_a": "Yes, Nowbat is open-source and free. The full code is available on GitHub with no subscription fees.",
+    "free_q": "Is ProNobat free?",
+    "free_a": "Yes, ProNobat is open-source and free. The full code is available on GitHub with no subscription fees.",
     "wordpress_version_q": "What is the minimum WordPress version required?",
-    "wordpress_version_a": "Nowbat requires WordPress 6.0 or higher and PHP 8.1 or higher.",
+    "wordpress_version_a": "ProNobat requires WordPress 6.0 or higher and PHP 8.1 or higher.",
     "payment_gateways_q": "Which payment gateways are supported?",
     "payment_gateways_a": "ZarinPal, IDPay, and NextPay with sandbox/live modes. Refunds are handled from the admin panel.",
     "jalali_q": "Is the calendar fully in Jalali?",
@@ -141,12 +141,12 @@
   "LandingDashboard": {
     "overline": "Admin Panel",
     "title": "Everything at a Glance",
-    "description": "The Nowbat dashboard shows the daily state of your business on a single screen. From today's appointments to monthly revenue — no separate reports needed.",
+    "description": "The ProNobat dashboard shows the daily state of your business on a single screen. From today's appointments to monthly revenue — no separate reports needed.",
     "bullet_1": "Status cards for confirmed, pending, and cancelled appointments",
     "bullet_2": "Revenue chart for 7, 30, and 90 days with automatic Jalali conversion",
     "bullet_3": "Today's appointments table with quick status change",
     "bullet_4": "Per-staff performance summary for the current day",
-    "image_alt": "Nowbat admin dashboard preview"
+    "image_alt": "ProNobat admin dashboard preview"
   },
   "LandingBookingWizard": {
     "overline": "Booking Form",
@@ -156,27 +156,27 @@
     "bullet_2": "Jalali calendar with real-time available slot display",
     "bullet_3": "Inline payment with ZarinPal, IDPay, or NextPay",
     "bullet_4": "Instant SMS confirmation after successful booking",
-    "image_alt": "Nowbat booking wizard preview"
+    "image_alt": "ProNobat booking wizard preview"
   },
   "LandingPayments": {
     "overline": "Payment Gateways",
     "title": "Iranian Payment Gateways Ready to Use",
-    "description": "Nowbat integrates with three trusted Iranian payment gateways. Payment verification is server-to-server — no client-reported data is trusted.",
+    "description": "ProNobat integrates with three trusted Iranian payment gateways. Payment verification is server-to-server — no client-reported data is trusted.",
     "bullet_1": "ZarinPal with Sandbox mode for cost-free testing",
     "bullet_2": "IDPay with refund support from the admin panel",
     "bullet_3": "NextPay for businesses that need more flexibility",
     "bullet_4": "Full transaction log with reference numbers and status",
-    "image_alt": "Nowbat payment gateway settings preview"
+    "image_alt": "ProNobat payment gateway settings preview"
   },
   "LandingSms": {
     "overline": "SMS & Notifications",
     "title": "Automatic Persian SMS Notifications",
-    "description": "Nowbat integrates with three Iranian SMS providers. Confirmations, reminders, and cancellation alerts are sent automatically with a full delivery log.",
+    "description": "ProNobat integrates with three Iranian SMS providers. Confirmations, reminders, and cancellation alerts are sent automatically with a full delivery log.",
     "bullet_1": "Kavenegar, Melipayamak, and IPPanel — your choice",
     "bullet_2": "Automatic 24-hour reminder to reduce no-shows",
     "bullet_3": "Daily send cap respected and customer opt-out checked",
     "bullet_4": "Full SMS log with delivery status for each message",
-    "image_alt": "Nowbat SMS notifications log preview"
+    "image_alt": "ProNobat SMS notifications log preview"
   },
   "LandingReports": {
     "overline": "Reports & Analytics",
@@ -186,7 +186,7 @@
     "bullet_2": "Per-staff performance: appointment count, revenue, cancellation rate",
     "bullet_3": "Capacity forecasting based on historical trends",
     "bullet_4": "Full CSV export of all data for external reporting",
-    "image_alt": "Nowbat analytics reports preview"
+    "image_alt": "ProNobat analytics reports preview"
   },
   "StatStrip": {
     "ariaLabel": "Plugin statistics",
@@ -200,10 +200,10 @@
     "open_source_label": "Open source"
   },
   "FeaturesPage": {
-    "meta_title": "Nowbat Features — Complete WordPress Booking Plugin Capabilities",
-    "meta_description": "Full list of 41 Nowbat features: Jalali calendar, Iranian payment gateways, Persian SMS, Google Calendar, REST API, and more.",
+    "meta_title": "ProNobat Features — Complete WordPress Booking Plugin Capabilities",
+    "meta_description": "Full list of 41 ProNobat features: Jalali calendar, Iranian payment gateways, Persian SMS, Google Calendar, REST API, and more.",
     "overline": "Complete Feature List",
-    "title": "All Nowbat Features at a Glance",
+    "title": "All ProNobat Features at a Glance",
     "subtitle": "From Jalali calendar to the developer API — everything you need for professional appointment scheduling.",
     "feature_count_label": "features in one plugin",
     "filter_label": "Filter features",
@@ -278,15 +278,15 @@
     "recurring_appointments_title": "Recurring Appointments",
     "recurring_appointments_desc": "Create weekly/monthly appointment series with RRULE; cancel individually or the entire series.",
     "gutenberg_block_title": "Gutenberg Block",
-    "gutenberg_block_desc": "Dedicated Nowbat block in the WordPress block editor with a sidebar settings panel.",
+    "gutenberg_block_desc": "Dedicated ProNobat block in the WordPress block editor with a sidebar settings panel.",
     "elementor_widget_title": "Elementor Widget",
     "elementor_widget_desc": "Drag-and-drop widget in Elementor with pre-selected service and staff options.",
     "shortcode_title": "Shortcode",
-    "shortcode_desc": "Use [nowbat_booking] in any page builder or theme with optional parameters.",
+    "shortcode_desc": "Use [pronobat_booking] in any page builder or theme with optional parameters.",
     "rest_api_title": "Full REST API",
     "rest_api_desc": "Complete endpoint set for appointments, customers, services, and settings with rate limiting.",
     "wp_roles_title": "WordPress Roles & Capabilities",
-    "wp_roles_desc": "Custom nowbat_* capabilities assignable to any custom role.",
+    "wp_roles_desc": "Custom pronobat_* capabilities assignable to any custom role.",
     "psr4_autoload_title": "PSR-4 Architecture",
     "psr4_autoload_desc": "Clean PHP with PSR-4 autoloading, full namespacing, and PHPStan Level 6 compliance.",
     "hooks_filters_title": "40+ Hooks & Filters",
@@ -303,13 +303,13 @@
     "i18n_ready_desc": ".pot/.po/.mo files for translation; full WPML and Polylang compatibility."
   },
   "HowItWorksPage": {
-    "meta_title": "How It Works — Nowbat Installation & Setup Guide",
-    "meta_description": "Step-by-step guide to installing the Nowbat booking plugin in WordPress, configuring services, and receiving your first online appointment.",
+    "meta_title": "How It Works — ProNobat Installation & Setup Guide",
+    "meta_description": "Step-by-step guide to installing the ProNobat booking plugin in WordPress, configuring services, and receiving your first online appointment.",
     "overline": "Complete Guide",
     "title": "From Installation to First Booking in 5 Steps",
     "subtitle": "Simple install, quick setup, immediate start — no coding required.",
     "step1_title": "Install & Activate the Plugin",
-    "step1_desc": "Search for Nowbat in the official WordPress repository and install it, or upload the ZIP file directly. After activation, the setup wizard opens.",
+    "step1_desc": "Search for ProNobat in the official WordPress repository and install it, or upload the ZIP file directly. After activation, the setup wizard opens.",
     "step1_note": "Requirements: WordPress 6.0+ and PHP 8.1+",
     "step2_title": "Run the Setup Wizard",
     "step2_desc": "The 4-step wizard configures your business name, timezone, default payment gateway, and SMS settings.",
@@ -318,17 +318,17 @@
     "step2_detail3": "Choose SMS provider and enter your API key",
     "step2_detail4": "Set default working hours for all staff",
     "step3_title": "Define Services & Staff",
-    "step3_desc": "From the Nowbat menu in the admin panel, add your services and staff. Each combination can have independent pricing and duration.",
+    "step3_desc": "From the ProNobat menu in the admin panel, add your services and staff. Each combination can have independent pricing and duration.",
     "step3_detail1": "Create at least one service with a name, duration, and price",
     "step3_detail2": "Create at least one staff member and assign services",
     "step3_detail3": "Set daily working hours for each staff member",
     "step3_detail4": "Optional: configure days off and blocked time ranges",
     "step4_title": "Place the Booking Form on Your Site",
-    "step4_desc": "Add the [nowbat_booking] shortcode to any page, post, or widget. Or use the Gutenberg block or Elementor widget.",
+    "step4_desc": "Add the [pronobat_booking] shortcode to any page, post, or widget. Or use the Gutenberg block or Elementor widget.",
     "step4_note": "You can pre-select service or staff using service_id or staff_id attributes.",
     "step5_title": "Receive Your First Appointment",
     "step5_desc": "The customer fills out the form, completes payment, and receives an SMS confirmation. You receive an email or SMS notification too.",
-    "step5_note": "Use the nowbat_appointment_confirmed hook to add custom notifications."
+    "step5_note": "Use the pronobat_appointment_confirmed hook to add custom notifications."
   },
   "Search": {
     "ariaLabel": "Search documentation",
@@ -346,10 +346,10 @@
     "on_this_page": "On This Page"
   },
   "GuidesPage": {
-    "meta_title": "Guides — Nowbat",
-    "meta_description": "Step-by-step guides for setting up Nowbat: payments, SMS notifications, Google Calendar, and more.",
+    "meta_title": "Guides — ProNobat",
+    "meta_description": "Step-by-step guides for setting up ProNobat: payments, SMS notifications, Google Calendar, and more.",
     "badge": "How-To Guides",
-    "title": "Nowbat Guides",
+    "title": "ProNobat Guides",
     "subtitle": "Practical, step-by-step tutorials for real-world scenarios — from payment setup to Google Calendar sync."
   }
 }

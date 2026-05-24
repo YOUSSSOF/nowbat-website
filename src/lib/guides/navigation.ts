@@ -36,14 +36,14 @@ export const ALL_GUIDES: GuidePage[] = [
     titleEn: "Configure SMS with Kavenegar",
     descriptionFa: "ثبت‌نام، دریافت API Key، تنظیم قالب OTP، و تست ارسال از پنل نوبت.",
     descriptionEn:
-      "Register, get an API Key, set up the OTP template, and send a test SMS from the Nowbat admin panel.",
+      "Register, get an API Key, set up the OTP template, and send a test SMS from the ProNobat admin panel.",
     category: "notifications",
     readingTimeMin: 6,
   },
   {
     slug: "google-calendar",
     titleFa: "اتصال Google Calendar به نوبت",
-    titleEn: "Connect Google Calendar to Nowbat",
+    titleEn: "Connect Google Calendar to ProNobat",
     descriptionFa:
       "ساخت OAuth2 App در Google Cloud Console، تنظیم Redirect URI، و اتصال تقویم هر کارمند.",
     descriptionEn:
@@ -67,7 +67,7 @@ export const ALL_GUIDES: GuidePage[] = [
     titleEn: "Elementor Integration",
     descriptionFa: "درگ کردن ویجت نوبت در Elementor، پیش‌انتخاب سرویس، و انتشار صفحه.",
     descriptionEn:
-      "Drag the Nowbat booking widget into an Elementor layout, configure service pre-selection, and publish.",
+      "Drag the ProNobat booking widget into an Elementor layout, configure service pre-selection, and publish.",
     category: "integrations",
     readingTimeMin: 5,
   },
@@ -76,7 +76,7 @@ export const ALL_GUIDES: GuidePage[] = [
     titleFa: "استفاده از بلاک Gutenberg",
     titleEn: "Gutenberg Block",
     descriptionFa: "افزودن بلاک فرم رزرو نوبت در ویرایشگر بلاک، تنظیم ویژگی‌ها، و پیش‌نمایش.",
-    descriptionEn: "Add the Nowbat booking block in the block editor, set attributes, and preview.",
+    descriptionEn: "Add the ProNobat booking block in the block editor, set attributes, and preview.",
     category: "integrations",
     readingTimeMin: 4,
   },
@@ -84,9 +84,9 @@ export const ALL_GUIDES: GuidePage[] = [
     slug: "custom-roles",
     titleFa: "نقش‌های سفارشی و دسترسی‌ها",
     titleEn: "Custom Roles and Capabilities",
-    descriptionFa: "ایجاد نقش «منشی ارشد» با `nowbat_manage_appointments` بدون دسترسی به تنظیمات.",
+    descriptionFa: "ایجاد نقش «منشی ارشد» با `pronobat_manage_appointments` بدون دسترسی به تنظیمات.",
     descriptionEn:
-      "Create a 'senior receptionist' role with `nowbat_manage_appointments` but no access to settings.",
+      "Create a 'senior receptionist' role with `pronobat_manage_appointments` but no access to settings.",
     category: "developer",
     readingTimeMin: 6,
   },

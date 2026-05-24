@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pronobat.ir";
 
   if (!guide) return { title: "Not Found" };
 
@@ -67,7 +67,7 @@ export default async function GuideSlugPage({ params }: Props) {
           </header>
 
           {/* MDX Content */}
-          <div className="prose-nowbat">{guide.content}</div>
+          <div className="prose-pronobat">{guide.content}</div>
 
           {/* Footer navigation */}
           <div className="mt-16 pt-8 border-t border-[var(--border)] flex items-center justify-between gap-4">

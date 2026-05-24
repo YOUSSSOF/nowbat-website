@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pronobat.ir";
   const ogImageUrl = `${siteUrl}/api/og?title=${encodeURIComponent(t("og_title"))}&description=${encodeURIComponent(t("og_description"))}`;
 
   return {
@@ -62,7 +62,7 @@ export default async function HomePage({ params }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "نوبت (Nowbat)",
+    name: "نوبت (ProNobat)",
     description: true
       ? "افزونه نوبت‌دهی آنلاین فارسی برای وردپرس با تقویم جلالی، درگاه‌های پرداخت ایرانی، و پیامک فارسی"
       : "Persian-first online appointment scheduling WordPress plugin with Jalali calendar, Iranian payment gateways, and Persian SMS",
@@ -72,9 +72,9 @@ export default async function HomePage({ params }: Props) {
     offers: {
       "@type": "Offer",
       price: undefined,
-      url: "https://www.rtl-theme.com/product/nowbat/",
+      url: "https://www.rtl-theme.com/product/pronobat/",
     },
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir",
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://pronobat.ir",
     softwareVersion: "1.0.0",
   };
 

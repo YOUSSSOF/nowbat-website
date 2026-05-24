@@ -28,29 +28,29 @@ description: "ایجاد نقش «منشی ارشد» با دسترسی مدیر
  * ساخت نقش «منشی نوبت» با دسترسی‌های محدود
  * این تابع یک بار اجرا می‌شود (هنگام فعال‌سازی تم یا افزونه)
  */
-function my_create_nowbat_receptionist_role(): void {
+function my_create_pronobat_receptionist_role(): void {
     // اگر نقش از قبل وجود داشت، چیزی نساز
-    if ( get_role( 'nowbat_receptionist' ) ) {
+    if ( get_role( 'pronobat_receptionist' ) ) {
         return;
     }
 
     add_role(
-        'nowbat_receptionist',
+        'pronobat_receptionist',
         'منشی نوبت‌دهی',
         [
             // دسترسی‌های پایه وردپرس
             'read'                         => true,
 
             // دسترسی‌های نوبت
-            'nowbat_manage_appointments'   => true,
-            'nowbat_view_reports'          => true,
+            'pronobat_manage_appointments'   => true,
+            'pronobat_view_reports'          => true,
 
             // دسترسی به مدیریت سرویس‌ها (فقط مشاهده و ویرایش، نه حذف)
-            'nowbat_manage_services'       => true,
+            'pronobat_manage_services'       => true,
         ]
     );
 }
-add_action( 'init', 'my_create_nowbat_receptionist_role' );
+add_action( 'init', 'my_create_pronobat_receptionist_role' );
 ```
 
 <Callout type="info">
@@ -64,16 +64,16 @@ add_action( 'init', 'my_create_nowbat_receptionist_role' );
 اگر می‌خواهید دسترسی نوبت را به یک نقش موجود (مثلاً Editor) بدهید:
 
 ```php
-function my_grant_nowbat_caps_to_editor(): void {
+function my_grant_pronobat_caps_to_editor(): void {
     $role = get_role( 'editor' );
     if ( ! $role ) {
         return;
     }
 
-    $role->add_cap( 'nowbat_manage_appointments' );
-    $role->add_cap( 'nowbat_view_reports' );
+    $role->add_cap( 'pronobat_manage_appointments' );
+    $role->add_cap( 'pronobat_view_reports' );
 }
-add_action( 'init', 'my_grant_nowbat_caps_to_editor' );
+add_action( 'init', 'my_grant_pronobat_caps_to_editor' );
 ```
 
 ---
@@ -106,17 +106,17 @@ add_action( 'init', 'my_grant_nowbat_caps_to_editor' );
 
 | Capability | توضیح | پیشنهاد برای منشی |
 |---|---|---|
-| `nowbat_manage_appointments` | مشاهده و مدیریت نوبت‌ها | ✅ بده |
-| `nowbat_manage_settings` | تنظیمات افزونه | ❌ نده |
-| `nowbat_manage_staff` | افزودن/ویرایش کارمندان | بستگی دارد |
-| `nowbat_manage_services` | افزودن/ویرایش سرویس‌ها | بستگی دارد |
-| `nowbat_view_reports` | مشاهده گزارش‌ها | ✅ بده |
-| `nowbat_process_refunds` | درخواست استرداد وجه | ❌ نده |
+| `pronobat_manage_appointments` | مشاهده و مدیریت نوبت‌ها | ✅ بده |
+| `pronobat_manage_settings` | تنظیمات افزونه | ❌ نده |
+| `pronobat_manage_staff` | افزودن/ویرایش کارمندان | بستگی دارد |
+| `pronobat_manage_services` | افزودن/ویرایش سرویس‌ها | بستگی دارد |
+| `pronobat_view_reports` | مشاهده گزارش‌ها | ✅ بده |
+| `pronobat_process_refunds` | درخواست استرداد وجه | ❌ نده |
 
 ---
 
 ## پاک کردن نقش (در صورت نیاز)
 
 ```php
-remove_role( 'nowbat_receptionist' );
+remove_role( 'pronobat_receptionist' );
 ```

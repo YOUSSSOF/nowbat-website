@@ -56,7 +56,7 @@ function HeroSection() {
             <div className="flex flex-wrap gap-3">
               <Button
                 as="a"
-                href="https://www.rtl-theme.com/product/nowbat/"
+                href="https://www.rtl-theme.com/product/pronobat/"
                 size="lg"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -105,7 +105,7 @@ function DashboardMockup() {
           <span className="w-3 h-3 rounded-full bg-success opacity-70" />
         </div>
         <div className="flex-1 h-4 bg-[var(--bg-surface)] rounded text-caption text-[var(--text-secondary)] px-2 flex items-center">
-          <span className="opacity-50">nowbat.ir/wp-admin</span>
+          <span className="opacity-50">pronobat.ir/wp-admin</span>
         </div>
       </div>
 

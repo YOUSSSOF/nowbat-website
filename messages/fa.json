@@ -282,11 +282,11 @@
     "elementor_widget_title": "ویجت المنتور",
     "elementor_widget_desc": "ویجت drag-and-drop در المنتور با پیش‌انتخاب خدمت و کارمند.",
     "shortcode_title": "شورت‌کد",
-    "shortcode_desc": "استفاده از [nowbat_booking] در هر صفحه‌سازی یا تم با پارامترهای اختیاری.",
+    "shortcode_desc": "استفاده از [pronobat_booking] در هر صفحه‌سازی یا تم با پارامترهای اختیاری.",
     "rest_api_title": "REST API کامل",
     "rest_api_desc": "مجموعه کامل endpoint برای نوبت‌ها، مشتریان، خدمات، و تنظیمات با محدودیت نرخ.",
     "wp_roles_title": "نقش‌ها و دسترسی‌های وردپرس",
-    "wp_roles_desc": "capability های اختصاصی nowbat_* قابل تفویض به هر نقش سفارشی.",
+    "wp_roles_desc": "capability های اختصاصی pronobat_* قابل تفویض به هر نقش سفارشی.",
     "psr4_autoload_title": "معماری PSR-4",
     "psr4_autoload_desc": "کد PHP منظم با PSR-4 autoloading، namespace بندی کامل، و PHPStan سطح ۶.",
     "hooks_filters_title": "۴۰+ هوک و فیلتر",
@@ -324,11 +324,11 @@
     "step3_detail3": "تنظیم ساعت کاری روزانه برای هر کارمند",
     "step3_detail4": "اختیاری: تنظیم روزهای مرخصی و زمان‌های مسدود",
     "step4_title": "قرار دادن فرم رزرو در سایت",
-    "step4_desc": "شورت‌کد [nowbat_booking] را در هر صفحه، پست، یا ویجت قرار دهید. یا از بلوک گوتنبرگ و ویجت المنتور استفاده کنید.",
+    "step4_desc": "شورت‌کد [pronobat_booking] را در هر صفحه، پست، یا ویجت قرار دهید. یا از بلوک گوتنبرگ و ویجت المنتور استفاده کنید.",
     "step4_note": "می‌توانید با service_id یا staff_id پیش‌انتخاب کنید.",
     "step5_title": "دریافت اولین نوبت",
     "step5_desc": "مشتری فرم را پر می‌کند، پرداخت می‌کند، و پیامک تأییدیه دریافت می‌کند. شما نیز اعلان ایمیل یا پیامک دریافت می‌کنید.",
-    "step5_note": "با هوک nowbat_appointment_confirmed می‌توانید اعلان‌های سفارشی اضافه کنید."
+    "step5_note": "با هوک pronobat_appointment_confirmed می‌توانید اعلان‌های سفارشی اضافه کنید."
   },
   "Search": {
     "ariaLabel": "جستجو در مستندات",

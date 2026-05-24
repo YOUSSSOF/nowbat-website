@@ -7,7 +7,7 @@ const FOOTER_LINKS = {
   product: [
     { href: "/#features", labelKey: "features" },
     { href: "/#how-it-works", labelKey: "how_it_works" },
-    { href: "https://www.rtl-theme.com/product/nowbat/", labelKey: "pricing", external: true },
+    { href: "https://www.rtl-theme.com/product/pronobat/", labelKey: "pricing", external: true },
   ],
   docs: [
     { href: "/docs/getting-started/installation", labelKey: "installation" },
@@ -130,7 +130,7 @@ function SiteFooter() {
             است.
           </p>
           <a
-            href="https://www.rtl-theme.com/product/nowbat/"
+            href="https://www.rtl-theme.com/product/pronobat/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-caption text-brand hover:text-brand-dim transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded"

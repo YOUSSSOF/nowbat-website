@@ -89,7 +89,7 @@ function SiteHeader() {
             <ThemeToggle />
             <Button
               as="a"
-              href="https://www.rtl-theme.com/product/nowbat/"
+              href="https://www.rtl-theme.com/product/pronobat/"
               size="sm"
               className="hidden sm:inline-flex"
               target="_blank"
@@ -174,7 +174,7 @@ function SiteHeader() {
           {/* Bottom actions */}
           <div className="px-6 py-6 border-t border-[var(--border)] flex flex-col gap-3">
             <a
-              href="https://www.rtl-theme.com/product/nowbat/"
+              href="https://www.rtl-theme.com/product/pronobat/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center px-4 py-2 rounded text-body-sm font-medium bg-brand text-white hover:bg-brand-dim transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-brand"

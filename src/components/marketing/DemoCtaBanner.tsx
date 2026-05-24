@@ -57,7 +57,7 @@ function DemoCtaBanner({ className, title, ctaLabel }: DemoCtaBannerProps) {
 
             <div className="flex flex-wrap justify-center gap-3">
               <a
-                href="https://www.rtl-theme.com/product/nowbat/"
+                href="https://www.rtl-theme.com/product/pronobat/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 text-body-lg rounded font-medium transition-colors duration-150 bg-brand text-white hover:bg-brand-dim border border-transparent"

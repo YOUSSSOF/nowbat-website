@@ -14,7 +14,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "GuidesPage" });
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pronobat.ir";
 
   return {
     title: t("meta_title"),

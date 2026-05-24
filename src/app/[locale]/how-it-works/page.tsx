@@ -11,7 +11,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "HowItWorksPage" });
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pronobat.ir";
   const pageUrl = `${siteUrl}/how-it-works`;
 
   return {
@@ -33,23 +33,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // ── Step data ───────────────────────────────────────────────────────────────
 const STEP_CODES = {
   install: `# دانلود از مخزن وردپرس
-wp plugin install nowbat --activate
+wp plugin install pronobat --activate
 
 # یا آپلود مستقیم فایل ZIP
-wp plugin install /path/to/nowbat.zip --activate`,
+wp plugin install /path/to/pronobat.zip --activate`,
 
   shortcode: `<!-- قرار دادن فرم رزرو در هر صفحه -->
-[nowbat_booking]
+[pronobat_booking]
 
 <!-- یا با پیش‌انتخاب خدمت -->
-[nowbat_booking service_id="1"]
+[pronobat_booking service_id="1"]
 
 <!-- یا با پیش‌انتخاب کارمند -->
-[nowbat_booking staff_id="2"]`,
+[pronobat_booking staff_id="2"]`,
 
   notification: `// هوک PHP برای اعلان سفارشی
-add_action( 'nowbat_appointment_confirmed', function( $appointment_id ) {
-    $appointment = nowbat_get_appointment( $appointment_id );
+add_action( 'pronobat_appointment_confirmed', function( $appointment_id ) {
+    $appointment = pronobat_get_appointment( $appointment_id );
     // ارسال اعلان سفارشی
     my_custom_notification( $appointment );
 } );`,

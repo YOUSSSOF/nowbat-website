@@ -39,7 +39,7 @@ const securityHeaders = [
       "font-src 'self'",
       "connect-src 'self'" + (isDev ? " ws: wss:" : ""),
       // Allow demo WordPress site to be iframed on the /demo page
-      "frame-src 'self' https://demo.nowbat.ir",
+      "frame-src 'self' https://demo.pronobat.ir",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",

@@ -28,7 +28,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   NOWBAT WEBSITE — GLOBAL CSS
+   PRONOBAT WEBSITE — GLOBAL CSS
    All custom properties mirror the Phase 2 design system docs.
    Do NOT add tokens here that aren't in docs/visual-identity.md,
    docs/typography-scale.md, or docs/spacing-scale.md.
@@ -220,20 +220,20 @@ img {
     padding: 1px 5px;
 }
 
-/* prose-nowbat — article/guide body content typography */
-.prose-nowbat {
+/* prose-pronobat — article/guide body content typography */
+.prose-pronobat {
     color: var(--text-primary);
     line-height: 1.75;
 }
 
-.prose-nowbat h1 {
+.prose-pronobat h1 {
     font-size: var(--text-display-md);
     font-weight: 700;
     margin-bottom: 1.5rem;
     margin-top: 0;
 }
 
-.prose-nowbat h2 {
+.prose-pronobat h2 {
     font-size: var(--text-heading-lg);
     font-weight: 600;
     margin-top: 2.5rem;
@@ -242,53 +242,53 @@ img {
     border-bottom: 1px solid var(--border);
 }
 
-.prose-nowbat h3 {
+.prose-pronobat h3 {
     font-size: var(--text-heading-md);
     font-weight: 600;
     margin-top: 1.75rem;
     margin-bottom: 0.75rem;
 }
 
-.prose-nowbat p {
+.prose-pronobat p {
     margin-bottom: 1.25rem;
 }
 
-.prose-nowbat ul,
-.prose-nowbat ol {
+.prose-pronobat ul,
+.prose-pronobat ol {
     margin-bottom: 1.25rem;
     padding-inline-start: 1.5rem;
 }
 
-.prose-nowbat li {
+.prose-pronobat li {
     margin-bottom: 0.375rem;
 }
 
-.prose-nowbat a {
+.prose-pronobat a {
     color: var(--brand);
     text-decoration: underline;
 }
 
-.prose-nowbat a:hover {
+.prose-pronobat a:hover {
     color: var(--brand-dim);
 }
 
-.prose-nowbat strong {
+.prose-pronobat strong {
     font-weight: 600;
 }
 
-.prose-nowbat hr {
+.prose-pronobat hr {
     border-color: var(--border);
     margin: 2rem 0;
 }
 
-.prose-nowbat table {
+.prose-pronobat table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 1.5rem;
     font-size: 0.9375rem;
 }
 
-.prose-nowbat th {
+.prose-pronobat th {
     background: var(--bg-surface);
     border: 1px solid var(--border);
     padding: 0.625rem 0.875rem;
@@ -296,12 +296,12 @@ img {
     text-align: start;
 }
 
-.prose-nowbat td {
+.prose-pronobat td {
     border: 1px solid var(--border);
     padding: 0.5rem 0.875rem;
 }
 
-.prose-nowbat pre {
+.prose-pronobat pre {
     margin-bottom: 1.5rem;
 }
 

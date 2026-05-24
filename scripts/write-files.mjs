@@ -35,7 +35,7 @@ export default async function LocaleLayout({ children, params }: Props) {
          */}
         <script
           dangerouslySetInnerHTML={{
-            __html: \`(function(){try{var s=localStorage.getItem("nowbat-theme");var d=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",s||d);}catch(e){}})();\`,
+            __html: \`(function(){try{var s=localStorage.getItem("pronobat-theme");var d=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",s||d);}catch(e){}})();\`,
           }}
         />
       </head>
@@ -102,7 +102,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const doc = await loadDocPage(slug);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pronobat.ir";
 
   if (!doc) return { title: "Not Found" };
 
