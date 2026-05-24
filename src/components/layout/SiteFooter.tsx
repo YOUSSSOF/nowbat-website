@@ -5,10 +5,9 @@ import { cn } from "@/lib/utils";
 
 const FOOTER_LINKS = {
   product: [
-    { href: "/features", labelKey: "features" },
-    { href: "/how-it-works", labelKey: "how_it_works" },
-    { href: "/demo", labelKey: "demo" },
-    { href: "/pricing", labelKey: "pricing" },
+    { href: "/#features", labelKey: "features" },
+    { href: "/#how-it-works", labelKey: "how_it_works" },
+    { href: "https://www.rtl-theme.com/product/nowbat/", labelKey: "pricing", external: true },
   ],
   docs: [
     { href: "/docs/getting-started/installation", labelKey: "installation" },
@@ -18,7 +17,7 @@ const FOOTER_LINKS = {
     { href: "/docs/rest-api", labelKey: "rest_api" },
     { href: "/docs/hooks", labelKey: "hooks" },
   ],
-  social: [{ href: "https://github.com/YOUSSSOF/nowbat-website", label: "GitHub", external: true }],
+  social: [] as { href: string; label: string; external?: boolean }[],
 };
 
 function SiteFooter() {
@@ -53,16 +52,31 @@ function SiteFooter() {
             <ul className="space-y-2">
               {FOOTER_LINKS.product.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "text-body-sm text-[var(--text-secondary)]",
-                      "hover:text-[var(--text-primary)] transition-colors duration-150",
-                      "outline-none focus-visible:text-brand",
-                    )}
-                  >
-                    {tn(item.labelKey as Parameters<typeof tn>[0])}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cn(
+                        "text-body-sm text-[var(--text-secondary)]",
+                        "hover:text-[var(--text-primary)] transition-colors duration-150",
+                        "outline-none focus-visible:text-brand",
+                      )}
+                    >
+                      {tn(item.labelKey as Parameters<typeof tn>[0])}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "text-body-sm text-[var(--text-secondary)]",
+                        "hover:text-[var(--text-primary)] transition-colors duration-150",
+                        "outline-none focus-visible:text-brand",
+                      )}
+                    >
+                      {tn(item.labelKey as Parameters<typeof tn>[0])}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -94,24 +108,26 @@ function SiteFooter() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-[var(--border)]">
-          <p className="text-caption text-[var(--text-secondary)]">{t("copyright")}</p>
-          <div className="flex items-center gap-4">
-            {FOOTER_LINKS.social.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
-                className={cn(
-                  "text-caption text-[var(--text-secondary)]",
-                  "hover:text-[var(--text-primary)] transition-colors duration-150",
-                  "outline-none focus-visible:ring-2 focus-visible:ring-brand rounded",
-                )}
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
+          <p className="text-caption text-[var(--text-secondary)]">
+            © ۱۴۰۵ نوبت. تمامی حقوق متعلق به{" "}
+            <a
+              href="https://youdexsof.ir"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand hover:text-brand-dim transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded"
+            >
+              یوسف هاشم‌زاده
+            </a>{" "}
+            است.
+          </p>
+          <a
+            href="https://www.rtl-theme.com/product/nowbat/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-caption text-brand hover:text-brand-dim transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded"
+          >
+            خرید از راستچین
+          </a>
         </div>
       </div>
     </footer>

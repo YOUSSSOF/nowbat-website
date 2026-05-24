@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* -- Yekan Bakh FaNum - Persian numeral font -- */
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('/fonts/yekan-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('/fonts/yekan-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('/fonts/yekan-extrablack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    NOWBAT WEBSITE — GLOBAL CSS
    All custom properties mirror the Phase 2 design system docs.
@@ -57,7 +82,7 @@
 :root {
     /* Font stacks — actual font files loaded in Phase 4 via next/font/local.
      Fallbacks provide a visually close experience until then. */
-    --font-sans: "Vazirmatn", "Inter", system-ui, sans-serif;
+    --font-sans: "Yekan Bakh", "Vazirmatn", system-ui, sans-serif;
     --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
 
     /* Type scale — desktop values (mobile overrides below) */
@@ -119,6 +144,25 @@ body {
     line-height: var(--leading-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/* Re-enable selection inside inputs and editable areas */
+input,
+textarea,
+[contenteditable] {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+}
+
+/* Prevent image dragging / right-click download */
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
 }
 
 /* ── Focus ring — all interactive elements ── */

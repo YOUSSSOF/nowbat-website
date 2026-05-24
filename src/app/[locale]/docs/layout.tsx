@@ -5,21 +5,17 @@ import { DocsLayoutClient } from "./_components/DocsLayoutClient";
 
 type Props = {
   children: ReactNode;
-  params: Promise<{ locale: string }>;
 };
 
-export default async function DocsLayout({ children, params }: Props) {
-  const { locale } = await params;
-
-  const sidebarGroups = buildSidebarGroups(locale);
-  const searchDocuments = buildSearchDocuments(locale);
+export default async function DocsLayout({ children }: Props) {
+  const sidebarGroups = buildSidebarGroups();
+  const searchDocuments = buildSearchDocuments();
 
   return (
     <>
       <SiteHeader />
       <div className="min-h-screen pt-16">
         <div className="mx-auto max-w-[1400px] px-6 flex gap-8">
-          {/* Sidebar */}
           <DocsLayoutClient sidebarGroups={sidebarGroups} searchDocuments={searchDocuments}>
             {children}
           </DocsLayoutClient>

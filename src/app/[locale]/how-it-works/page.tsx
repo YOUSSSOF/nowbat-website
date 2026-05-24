@@ -12,17 +12,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "HowItWorksPage" });
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir";
-  const pageUrl = locale === "fa" ? `${siteUrl}/how-it-works` : `${siteUrl}/en/how-it-works`;
+  const pageUrl = `${siteUrl}/how-it-works`;
 
   return {
     title: t("meta_title"),
     description: t("meta_description"),
     alternates: {
       canonical: pageUrl,
-      languages: {
-        fa: `${siteUrl}/how-it-works`,
-        en: `${siteUrl}/en/how-it-works`,
-      },
     },
     openGraph: {
       type: "website",

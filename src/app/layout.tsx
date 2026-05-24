@@ -1,12 +1,17 @@
 import type { ReactNode } from "react";
 
 /**
- * Root layout — intentionally minimal.
- * The <html> and <body> tags with correct lang/dir attributes are provided
- * by the [locale]/layout.tsx nested layout, which also sets up i18n providers.
- *
- * This file exists because Next.js App Router requires a root layout.tsx.
+ * Root layout — provides required <html> and <body> tags.
+ * The [locale]/layout.tsx nested layout handles i18n, lang, dir, and theme.
+ * We use suppressHydrationWarning because [locale]/layout.tsx rewrites
+ * these attributes (lang, dir, data-theme) on the client after hydration.
  */
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return children;
+  return (
+    <html suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        {children}
+      </body>
+    </html>
+  );
 }

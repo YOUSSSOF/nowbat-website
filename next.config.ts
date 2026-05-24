@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 import createNextIntlPlugin from "next-intl/plugin";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const securityHeaders = [
   {
     key: "X-DNS-Prefetch-Control",
@@ -27,12 +29,15 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      // 'unsafe-inline' needed for Next.js inline scripts (theme flash prevention)
-      "script-src 'self' 'unsafe-inline'",
+      // In development, Next.js React Fast Refresh requires 'unsafe-eval'.
+      // In production this is not needed and should be omitted.
+      isDev
+        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
+        : "script-src 'self' 'unsafe-inline'",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob:",
       "font-src 'self'",
-      "connect-src 'self'",
+      "connect-src 'self'" + (isDev ? " ws: wss:" : ""),
       // Allow demo WordPress site to be iframed on the /demo page
       "frame-src 'self' https://demo.nowbat.ir",
       "object-src 'none'",

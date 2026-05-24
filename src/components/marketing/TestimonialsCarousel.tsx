@@ -117,7 +117,7 @@ function TestimonialsCarousel({ className }: { className?: string }) {
                 "outline-none focus-visible:ring-2 focus-visible:ring-brand",
               )}
             >
-              <IconChevronLeft size={16} aria-hidden="true" />
+              <IconChevronRight size={16} aria-hidden="true" />
             </button>
 
             {/* Dots */}
@@ -154,7 +154,7 @@ function TestimonialsCarousel({ className }: { className?: string }) {
                 "outline-none focus-visible:ring-2 focus-visible:ring-brand",
               )}
             >
-              <IconChevronRight size={16} aria-hidden="true" />
+              <IconChevronLeft size={16} aria-hidden="true" />
             </button>
           </div>
         </div>

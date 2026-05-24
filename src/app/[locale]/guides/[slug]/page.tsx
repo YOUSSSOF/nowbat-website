@@ -1,58 +1,40 @@
-import * as React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteHeader, SiteFooter } from "@/components/layout";
 import { DemoCtaBanner } from "@/components/marketing";
-import { Badge } from "@/components/ui/Badge";
 import { Link } from "@/lib/i18n";
-import {
-  loadGuide,
-  getAllGuideSlugs,
-  getGuideBySlug,
-  getGuideTitle,
-  GUIDE_CATEGORY_LABELS,
-} from "@/lib/guides";
-import { IconArrowLeft, IconArrowRight, IconClock, IconBook } from "@tabler/icons-react";
+import { ALL_GUIDES, getGuideBySlug, loadGuide } from "@/lib/guides";
+import { IconArrowRight, IconClock, IconArrowLeft } from "@tabler/icons-react";
 
-type Props = { params: Promise<{ locale: string; slug: string }> };
+type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  const slugs = getAllGuideSlugs();
-  const locales = ["fa", "en"];
-
-  return locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
+  return ALL_GUIDES.map((g) => ({ slug: g.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale, slug } = await params;
-  const guide = await loadGuide(slug);
-  const guideMeta = getGuideBySlug(slug);
+  const { slug } = await params;
+  const guide = getGuideBySlug(slug);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir";
 
-  if (!guide || !guideMeta) return { title: "Not Found" };
-
-  const pageUrl = locale === "fa" ? `${siteUrl}/guides/${slug}` : `${siteUrl}/en/guides/${slug}`;
+  if (!guide) return { title: "Not Found" };
 
   return {
-    title: `${guide.frontmatter.title} — راهنماهای نوبت`,
-    description: guide.frontmatter.description,
-    alternates: { canonical: pageUrl },
+    title: `${guide.titleFa} — راهنماهای نوبت`,
+    description: guide.descriptionFa,
+    alternates: {
+      canonical: `${siteUrl}/guides/${slug}`,
+    },
   };
 }
 
-export default async function GuidePage({ params }: Props) {
-  const { locale, slug } = await params;
-  const guide = await loadGuide(slug);
+export default async function GuideSlugPage({ params }: Props) {
+  const { slug } = await params;
   const guideMeta = getGuideBySlug(slug);
+  if (!guideMeta) notFound();
 
-  if (!guide || !guideMeta) notFound();
-
-  const isRtl = locale === "fa";
-  const BackArrow = isRtl ? IconArrowRight : IconArrowLeft;
-  const categoryLabel =
-    locale === "fa"
-      ? GUIDE_CATEGORY_LABELS[guideMeta.category].fa
-      : GUIDE_CATEGORY_LABELS[guideMeta.category].en;
+  const guide = await loadGuide(slug);
+  if (!guide) notFound();
 
   return (
     <>
@@ -62,61 +44,53 @@ export default async function GuidePage({ params }: Props) {
           {/* Back link */}
           <Link
             href="/guides"
-            className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 text-body-sm rounded font-medium transition-colors duration-150 text-[var(--text-secondary)] hover:text-brand"
+            className="inline-flex items-center gap-2 text-body-sm text-[var(--text-secondary)] hover:text-brand transition-colors mb-8"
           >
-            <BackArrow size={16} />
-            {locale === "fa" ? "همه راهنماها" : "All Guides"}
+            <IconArrowRight size={14} />
+            همه راهنماها
           </Link>
 
           {/* Header */}
           <header className="mb-10">
-            <div className="flex items-center gap-3 mb-4">
-              <Badge variant="neutral" size="sm">
-                {categoryLabel}
-              </Badge>
-              <span className="flex items-center gap-1.5 text-caption text-[var(--text-secondary)]">
-                <IconClock size={12} />
-                {guideMeta.readingTimeMin} {locale === "fa" ? "دقیقه مطالعه" : "min read"}
+            <div className="flex items-center gap-3 mb-4 text-caption text-[var(--text-secondary)]">
+              <span className="flex items-center gap-1">
+                <IconClock size={13} />
+                {guideMeta.readingTimeMin} دقیقه مطالعه
               </span>
             </div>
-
-            <h1 className="text-display-md font-bold text-[var(--text-primary)] mb-4">
-              {guide.frontmatter.title}
+            <h1 className="text-display-md font-bold text-[var(--text-primary)] leading-tight mb-4">
+              {guideMeta.titleFa}
             </h1>
-
-            {guide.frontmatter.description && (
-              <p className="text-body-lg text-[var(--text-secondary)] leading-relaxed">
-                {guide.frontmatter.description}
-              </p>
-            )}
-
-            <hr className="mt-8 border-[var(--border)]" />
+            <p className="text-body-lg text-[var(--text-secondary)] leading-relaxed">
+              {guideMeta.descriptionFa}
+            </p>
           </header>
 
           {/* MDX Content */}
-          <article className="prose-nowbat">{guide.content}</article>
+          <div className="prose-nowbat">{guide.content}</div>
 
-          {/* Footer nav */}
-          <div className="mt-12 pt-8 border-t border-[var(--border)] flex items-center justify-between">
+          {/* Footer navigation */}
+          <div className="mt-16 pt-8 border-t border-[var(--border)] flex items-center justify-between gap-4">
             <Link
               href="/guides"
-              className="inline-flex items-center gap-2 px-3 py-1.5 text-body-sm rounded font-medium transition-colors duration-150 text-brand border border-brand hover:bg-[var(--brand-glow)]"
+              className="inline-flex items-center gap-2 text-body-sm text-[var(--text-secondary)] hover:text-brand transition-colors"
             >
-              <BackArrow size={14} />
-              {locale === "fa" ? "همه راهنماها" : "All Guides"}
+              <IconArrowRight size={14} />
+              همه راهنماها
             </Link>
-
             <Link
               href="/docs"
-              className="inline-flex items-center gap-2 px-3 py-1.5 text-body-sm rounded font-medium transition-colors duration-150 text-brand border border-brand hover:bg-[var(--brand-glow)]"
+              className="inline-flex items-center gap-2 text-body-sm text-[var(--text-secondary)] hover:text-brand transition-colors"
             >
-              <IconBook size={14} />
-              {locale === "fa" ? "مستندات کامل" : "Full Documentation"}
+              مستندات کامل
+              <IconArrowLeft size={14} />
             </Link>
           </div>
-        </div>
 
-        <DemoCtaBanner className="mt-24" />
+          <div className="mt-16">
+            <DemoCtaBanner />
+          </div>
+        </div>
       </main>
       <SiteFooter />
     </>

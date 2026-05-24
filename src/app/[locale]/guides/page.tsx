@@ -6,13 +6,8 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { DemoCtaBanner } from "@/components/marketing";
 import { Link } from "@/lib/i18n";
-import {
-  ALL_GUIDES,
-  GUIDE_CATEGORY_LABELS,
-  getGuideTitle,
-  getGuideDescription,
-} from "@/lib/guides";
-import { IconBook, IconClock, IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { ALL_GUIDES, GUIDE_CATEGORY_LABELS } from "@/lib/guides";
+import { IconBook, IconClock, IconArrowLeft } from "@tabler/icons-react";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -25,16 +20,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t("meta_title"),
     description: t("meta_description"),
     alternates: {
-      canonical: locale === "fa" ? `${siteUrl}/guides` : `${siteUrl}/en/guides`,
-      languages: {
-        fa: `${siteUrl}/guides`,
-        en: `${siteUrl}/en/guides`,
-      },
+      canonical: `${siteUrl}/guides`,
     },
     openGraph: {
       title: t("meta_title"),
       description: t("meta_description"),
-      url: locale === "fa" ? `${siteUrl}/guides` : `${siteUrl}/en/guides`,
+      url: `${siteUrl}/guides`,
     },
   };
 }
@@ -42,8 +33,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function GuidesPage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "GuidesPage" });
-  const isRtl = locale === "fa";
-  const ArrowIcon = isRtl ? IconArrowLeft : IconArrowRight;
 
   return (
     <>
@@ -77,10 +66,7 @@ export default async function GuidesPage({ params }: Props) {
           <div className="mx-auto max-w-container-xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {ALL_GUIDES.map((guide) => {
-                const categoryLabel =
-                  locale === "fa"
-                    ? GUIDE_CATEGORY_LABELS[guide.category].fa
-                    : GUIDE_CATEGORY_LABELS[guide.category].en;
+                const categoryLabel = GUIDE_CATEGORY_LABELS[guide.category].fa;
 
                 return (
                   <GlassCard
@@ -93,16 +79,16 @@ export default async function GuidesPage({ params }: Props) {
                       </Badge>
                       <span className="flex items-center gap-1 text-caption text-[var(--text-secondary)]">
                         <IconClock size={12} />
-                        {guide.readingTimeMin} {locale === "fa" ? "دقیقه" : "min"}
+                        {guide.readingTimeMin} دقیقه
                       </span>
                     </div>
 
                     <div className="flex-1">
                       <h2 className="text-heading-sm font-semibold text-[var(--text-primary)] mb-2 group-hover:text-brand transition-colors">
-                        {getGuideTitle(guide, locale)}
+                        {guide.titleFa}
                       </h2>
                       <p className="text-body-sm text-[var(--text-secondary)] leading-relaxed">
-                        {getGuideDescription(guide, locale)}
+                        {guide.descriptionFa}
                       </p>
                     </div>
 
@@ -110,8 +96,8 @@ export default async function GuidesPage({ params }: Props) {
                       href={`/guides/${guide.slug}`}
                       className="self-start inline-flex items-center gap-2 px-3 py-1.5 text-body-sm rounded font-medium transition-colors duration-150 text-brand border border-brand hover:bg-[var(--brand-glow)]"
                     >
-                      {locale === "fa" ? "مطالعه راهنما" : "Read Guide"}
-                      <ArrowIcon size={14} />
+                      مطالعه راهنما
+                      <IconArrowLeft size={14} />
                     </Link>
                   </GlassCard>
                 );

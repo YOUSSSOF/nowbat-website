@@ -2,13 +2,11 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import {
   HeroSection,
-  StatStrip,
   FeatureStrip,
   HowItWorksSection,
   AlternatingFeature,
   FeatureGrid,
   DemoCtaBanner,
-  TestimonialsCarousel,
   FaqAccordion,
 } from "@/components/marketing";
 import { SiteHeader, SiteFooter } from "@/components/layout";
@@ -27,15 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: t("description"),
     keywords: t("keywords"),
     alternates: {
-      canonical: locale === "fa" ? siteUrl : `${siteUrl}/en`,
-      languages: {
-        fa: siteUrl,
-        en: `${siteUrl}/en`,
-      },
+      canonical: siteUrl,
     },
     openGraph: {
       type: "website",
-      url: locale === "fa" ? siteUrl : `${siteUrl}/en`,
+      url: siteUrl,
       title: t("og_title"),
       description: t("og_description"),
       siteName: "نوبت",
@@ -69,21 +63,19 @@ export default async function HomePage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "نوبت (Nowbat)",
-    description:
-      locale === "fa"
-        ? "افزونه نوبت‌دهی آنلاین فارسی برای وردپرس با تقویم جلالی، درگاه‌های پرداخت ایرانی، و پیامک فارسی"
-        : "Persian-first online appointment scheduling WordPress plugin with Jalali calendar, Iranian payment gateways, and Persian SMS",
+    description: true
+      ? "افزونه نوبت‌دهی آنلاین فارسی برای وردپرس با تقویم جلالی، درگاه‌های پرداخت ایرانی، و پیامک فارسی"
+      : "Persian-first online appointment scheduling WordPress plugin with Jalali calendar, Iranian payment gateways, and Persian SMS",
     operatingSystem: "WordPress 6.0+",
     applicationCategory: "BusinessApplication",
-    inLanguage: ["fa", "en"],
+    inLanguage: "fa",
     offers: {
       "@type": "Offer",
-      price: "0",
-      priceCurrency: "IRR",
+      price: undefined,
+      url: "https://www.rtl-theme.com/product/nowbat/",
     },
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nowbat.ir",
     softwareVersion: "1.0.0",
-    releaseNotes: "https://github.com/YOUSSSOF/nowbat/blob/master/docs/PROGRESS.md",
   };
 
   return (
@@ -97,10 +89,7 @@ export default async function HomePage({ params }: Props) {
         {/* 1. Hero */}
         <HeroSection />
 
-        {/* 2. Stats */}
-        <StatStrip />
-
-        {/* 3. Feature strip */}
+        {/* 2. Feature strip */}
         <FeatureStrip />
 
         {/* 4. How it works */}
@@ -189,10 +178,7 @@ export default async function HomePage({ params }: Props) {
         {/* 11. Demo CTA banner */}
         <DemoCtaBanner />
 
-        {/* 12. Testimonials */}
-        <TestimonialsCarousel />
-
-        {/* 13. FAQ */}
+        {/* 12. FAQ */}
         <FaqAccordion />
       </main>
       <SiteFooter />

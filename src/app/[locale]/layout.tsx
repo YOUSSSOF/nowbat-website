@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/../i18n/routing";
+import { ContentProtection } from "@/components/layout";
 import "@/styles/globals.css";
 
 type Props = {
@@ -14,10 +15,18 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+const themeScript =
+  "(function(){try{" +
+  "document.documentElement.lang='fa';" +
+  "document.documentElement.dir='rtl';" +
+  "var s=localStorage.getItem('nowbat-theme');" +
+  "var d=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';" +
+  "document.documentElement.setAttribute('data-theme',s||d);" +
+  "}catch(e){}})()";
+
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
 
-  // Reject any locale that isn't in our routing config
   if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
@@ -25,29 +34,12 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html
-      lang={locale}
-      dir={locale === "fa" ? "rtl" : "ltr"}
-      suppressHydrationWarning
-    >
-      <head>
-        {/*
-         * Theme flash prevention — must run before any stylesheet is applied.
-         * Reads the user's saved preference from localStorage, falls back to
-         * the OS-level prefers-color-scheme, and sets data-theme on <html>.
-         * This is a static, non-user-derived string — no XSS risk.
-         */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem("nowbat-theme");var d=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",s||d);}catch(e){}})();`,
-          }}
-        />
-      </head>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <>
+      <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      <ContentProtection />
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        {children}
+      </NextIntlClientProvider>
+    </>
   );
 }

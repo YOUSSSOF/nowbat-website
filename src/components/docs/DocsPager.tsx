@@ -39,7 +39,7 @@ function DocsPager({ prev, next, className }: DocsPagerProps) {
             "outline-none focus-visible:ring-2 focus-visible:ring-brand",
           )}
         >
-          <IconChevronLeft
+          <IconChevronRight
             size={18}
             className="text-[var(--text-secondary)] group-hover:text-brand transition-colors duration-150 shrink-0"
             aria-hidden="true"
@@ -82,7 +82,7 @@ function DocsPager({ prev, next, className }: DocsPagerProps) {
               {next.label}
             </p>
           </div>
-          <IconChevronRight
+          <IconChevronLeft
             size={18}
             className="text-[var(--text-secondary)] group-hover:text-brand transition-colors duration-150 shrink-0"
             aria-hidden="true"

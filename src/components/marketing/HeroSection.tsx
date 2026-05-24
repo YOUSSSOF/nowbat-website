@@ -23,8 +23,7 @@ function HeroSection() {
       <div
         className="absolute top-1/3 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, rgba(55,138,221,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(55,138,221,0.08) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -54,8 +53,14 @@ function HeroSection() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <Button as={Link} href="/demo" size="lg">
+            <div className="flex flex-wrap gap-3">
+              <Button
+                as="a"
+                href="https://www.rtl-theme.com/product/nowbat/"
+                size="lg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t("cta_primary")}
               </Button>
               <Button
@@ -67,11 +72,6 @@ function HeroSection() {
                 {t("cta_secondary")}
               </Button>
             </div>
-
-            {/* Social proof */}
-            <p className="text-body-sm text-[var(--text-secondary)]">
-              {t("social_proof")}
-            </p>
           </motion.div>
 
           {/* Right — Dashboard mockup */}
@@ -94,10 +94,7 @@ function DashboardMockup() {
 
   return (
     <div
-      className={cn(
-        "glass-card p-4",
-        "border border-[rgba(55,138,221,0.15)]",
-      )}
+      className={cn("glass-card p-4", "border border-[rgba(55,138,221,0.15)]")}
       aria-label={t("mockup_aria")}
     >
       {/* Mockup header bar */}
@@ -123,9 +120,7 @@ function DashboardMockup() {
             key={stat.label}
             className="bg-[var(--bg-surface)] rounded p-2.5 border border-[var(--border)]"
           >
-            <p className="text-caption text-[var(--text-secondary)] mb-1 truncate">
-              {stat.label}
-            </p>
+            <p className="text-caption text-[var(--text-secondary)] mb-1 truncate">{stat.label}</p>
             <p
               className={cn(
                 "text-heading-sm font-bold",
@@ -172,29 +167,22 @@ function DashboardMockup() {
               className="w-7 h-7 rounded-full bg-brand flex items-center justify-center shrink-0"
               aria-hidden="true"
             >
-              <span className="text-caption font-bold text-white">
-                {appt.name.charAt(0)}
-              </span>
+              <span className="text-caption font-bold text-white">{appt.name.charAt(0)}</span>
             </div>
             {/* Info */}
             <div className="flex-1 min-w-0">
               <p className="text-caption font-medium text-[var(--text-primary)] truncate">
                 {appt.name}
               </p>
-              <p className="text-[10px] text-[var(--text-secondary)] truncate">
-                {appt.service}
-              </p>
+              <p className="text-[10px] text-[var(--text-secondary)] truncate">{appt.service}</p>
             </div>
             {/* Status badge */}
             <span
               className={cn(
                 "text-[10px] font-medium px-1.5 py-0.5 rounded-full shrink-0 flex items-center gap-1",
-                appt.status === "confirmed" &&
-                  "bg-[rgba(29,158,117,0.15)] text-success",
-                appt.status === "pending" &&
-                  "bg-[rgba(233,165,38,0.15)] text-warning",
-                appt.status === "completed" &&
-                  "bg-[var(--bg-glass)] text-[var(--text-secondary)]",
+                appt.status === "confirmed" && "bg-[rgba(29,158,117,0.15)] text-success",
+                appt.status === "pending" && "bg-[rgba(233,165,38,0.15)] text-warning",
+                appt.status === "completed" && "bg-[var(--bg-glass)] text-[var(--text-secondary)]",
               )}
             >
               {appt.pulse && (

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
-import { LocaleToggle } from "./LocaleToggle";
+import { ThemeToggle } from "./ThemeToggle";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 
 interface NavItem {
@@ -14,13 +14,10 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { href: "/features", labelKey: "features" },
-  { href: "/how-it-works", labelKey: "how_it_works" },
-  { href: "/demo", labelKey: "demo" },
-  { href: "/docs", labelKey: "docs" },
+  { href: "/#features", labelKey: "features" },
+  { href: "/#how-it-works", labelKey: "how_it_works" },
+  { href: "/docs/getting-started/installation", labelKey: "docs" },
   { href: "/guides", labelKey: "guides" },
-  { href: "/blog", labelKey: "blog" },
-  { href: "/pricing", labelKey: "pricing" },
 ];
 
 function SiteHeader() {
@@ -49,8 +46,8 @@ function SiteHeader() {
           "fixed top-0 inset-x-0 z-[200]",
           "transition-all duration-300",
           scrolled
-            ? "bg-[rgba(7,7,14,0.8)] backdrop-blur-[16px] border-b border-[var(--border)]"
-            : "bg-transparent",
+            ? "bg-[var(--bg-surface)] bg-opacity-90 backdrop-blur-[16px] border-b border-[var(--border)]"
+            : "bg-[var(--bg-surface)] border-b border-[var(--border)]",
         )}
       >
         <div className="mx-auto max-w-container-xl px-6 h-16 flex items-center justify-between gap-6">
@@ -88,8 +85,15 @@ function SiteHeader() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            <LocaleToggle className="hidden sm:flex" />
-            <Button as={Link} href="/demo" size="sm" className="hidden sm:inline-flex">
+            <ThemeToggle />
+            <Button
+              as="a"
+              href="https://www.rtl-theme.com/product/nowbat/"
+              size="sm"
+              className="hidden sm:inline-flex"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t("cta")}
             </Button>
 
@@ -158,10 +162,14 @@ function SiteHeader() {
 
           {/* Bottom actions */}
           <div className="px-6 py-6 border-t border-[var(--border)] flex flex-col gap-3">
-            <LocaleToggle className="w-full justify-center" />
-            <Button as={Link} href="/demo" className="w-full justify-center">
+            <a
+              href="https://www.rtl-theme.com/product/nowbat/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center px-4 py-2 rounded text-body-sm font-medium bg-brand text-white hover:bg-brand-dim transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-brand"
+            >
               {t("cta")}
-            </Button>
+            </a>
           </div>
         </div>
       )}
