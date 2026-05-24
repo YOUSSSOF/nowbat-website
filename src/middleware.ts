@@ -7,6 +7,6 @@ export const config = {
   // Match all routes except Next.js internals, static assets, and API routes.
   // This ensures the middleware handles i18n routing for all pages.
   matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico|favicon.svg|apple-touch-icon.png|icon-.*\\.png|og/|images/|fonts/).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|favicon.svg|apple-touch-icon.png|icon-.*\\.png|og/|images/|fonts/|.*\\.svg|.*\\.png|.*\\.ico|.*\\.webp|.*\\.jpg|.*\\.jpeg).*)",
   ],
 };

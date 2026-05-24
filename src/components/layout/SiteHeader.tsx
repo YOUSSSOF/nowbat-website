@@ -54,14 +54,15 @@ function SiteHeader() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded"
+            className="flex items-center shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded"
+            aria-label="ProNobat"
           >
-            <span className="text-body font-bold text-brand" aria-label="Nowbat">
-              نوبت
-            </span>
-            <span className="text-body-sm text-[var(--text-secondary)] hidden sm:inline">
-              · nowbat
-            </span>
+            <img
+              src="/pronobat-light.svg"
+              alt="ProNobat"
+              className="block dark:hidden h-8 w-auto"
+            />
+            <img src="/pronobat-dark.svg" alt="ProNobat" className="hidden dark:block h-8 w-auto" />
           </Link>
 
           {/* Desktop nav */}
@@ -127,10 +128,20 @@ function SiteHeader() {
           <div className="h-16 flex items-center justify-between px-6 border-b border-[var(--border)]">
             <Link
               href="/"
-              className="text-body font-bold text-brand"
+              className="flex items-center outline-none focus-visible:ring-2 focus-visible:ring-brand rounded"
+              aria-label="ProNobat"
               onClick={() => setMobileOpen(false)}
             >
-              نوبت
+              <img
+                src="/pronobat-light.svg"
+                alt="ProNobat"
+                className="block dark:hidden h-8 w-auto"
+              />
+              <img
+                src="/pronobat-dark.svg"
+                alt="ProNobat"
+                className="hidden dark:block h-8 w-auto"
+              />
             </Link>
             <button
               type="button"

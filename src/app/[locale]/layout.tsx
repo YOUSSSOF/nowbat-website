@@ -19,7 +19,7 @@ const themeScript =
   "(function(){try{" +
   "document.documentElement.lang='fa';" +
   "document.documentElement.dir='rtl';" +
-  "var s=localStorage.getItem('nowbat-theme');" +
+  "var s=localStorage.getItem('pronobat-theme');" +
   "var d=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';" +
   "document.documentElement.setAttribute('data-theme',s||d);" +
   "}catch(e){}})()";

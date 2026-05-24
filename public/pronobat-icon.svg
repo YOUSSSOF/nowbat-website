@@ -1,0 +1,8 @@
+<svg width="48" height="48" viewBox="0 0 48 48" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>ProNobat icon mark</title>
+  <rect x="6" y="10" width="36" height="36" rx="4" fill="none" stroke="#378ADD" stroke-width="2"/>
+  <line x1="6" y1="21" x2="42" y2="21" stroke="#378ADD" stroke-width="2"/>
+  <line x1="17" y1="5" x2="17" y2="15" stroke="#378ADD" stroke-width="2" stroke-linecap="round"/>
+  <line x1="31" y1="5" x2="31" y2="15" stroke="#378ADD" stroke-width="2" stroke-linecap="round"/>
+  <rect x="16" y="27" width="7" height="7" rx="1.5" fill="#378ADD"/>
+</svg>

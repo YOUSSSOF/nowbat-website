@@ -17,7 +17,7 @@ function ThemeToggle({ className }: { className?: string }) {
   function toggle() {
     const next = theme === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("nowbat-theme", next);
+    localStorage.setItem("pronobat-theme", next);
     setTheme(next);
   }
 

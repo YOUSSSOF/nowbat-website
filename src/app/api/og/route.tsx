@@ -68,7 +68,7 @@ export async function GET(req: NextRequest) {
             letterSpacing: "0.1em",
           }}
         >
-          nowbat.ir
+          pronobat.ir
         </span>
         <span
           style={{
@@ -84,7 +84,7 @@ export async function GET(req: NextRequest) {
             color: "#378ADD",
           }}
         >
-          نوبت
+          ProNobat
         </span>
       </div>
 

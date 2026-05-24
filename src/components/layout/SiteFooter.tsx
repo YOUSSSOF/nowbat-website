@@ -34,10 +34,19 @@ function SiteFooter() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 mb-4 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded"
+              className="inline-flex items-center mb-4 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded"
+              aria-label="ProNobat"
             >
-              <span className="text-heading-sm font-bold text-brand">نوبت</span>
-              <span className="text-body-sm text-[var(--text-secondary)]">· nowbat</span>
+              <img
+                src="/pronobat-light.svg"
+                alt="ProNobat"
+                className="block dark:hidden h-7 w-auto"
+              />
+              <img
+                src="/pronobat-dark.svg"
+                alt="ProNobat"
+                className="hidden dark:block h-7 w-auto"
+              />
             </Link>
             <p className="text-body-sm text-[var(--text-secondary)] leading-relaxed max-w-xs">
               {t("tagline")}
@@ -109,7 +118,7 @@ function SiteFooter() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-[var(--border)]">
           <p className="text-caption text-[var(--text-secondary)]">
-            © ۱۴۰۵ نوبت. تمامی حقوق متعلق به{" "}
+            © ۱۴۰۵ ProNobat. تمامی حقوق متعلق به{" "}
             <a
               href="https://youdexsof.ir"
               target="_blank"
