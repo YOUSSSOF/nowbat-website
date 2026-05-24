@@ -50,6 +50,10 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 
+  // framer-motion v12 splits into sub-packages (motion-dom, motion-utils).
+  // Next.js webpack fails to generate vendor chunks for them without this.
+  transpilePackages: ["framer-motion", "motion-dom", "motion-utils"],
+
   async headers() {
     return [
       {
